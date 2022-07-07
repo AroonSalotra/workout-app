@@ -28,10 +28,8 @@ const Main = (props) => {
                 break;
         }
         return liftType(e.target.value)
-    }
 
-    const debug = document.getElementById("squat")
-    // console.log(debug)
+    }
 
 
 
@@ -55,12 +53,19 @@ const Main = (props) => {
                     handleChange={handleChange}
                     id="overhead" />
             </div>
-            <div>
-                <h2>Squat</h2>
-                <Lifts value={0.65} operand={squat} round={props.round} />
-                <Lifts value={0.75} operand={squat} round={props.round} />
-                <Lifts value={0.85} operand={squat} round={props.round} />
+
+            <h2>Week One</h2>
+            <div className="trainingWeek">
+                <div className="trainingDay">
+                    <h3>Squat</h3>
+                    {/* <Lifts value={0.65} operand={squat} round={props.round} /> */}
+                    <Lifts args={[0.65, 0.75, 0.85]} operand={squat} round={props.round} />
+                </div>
             </div>
+
+
+
+
         </div>
 
     );
