@@ -1,7 +1,44 @@
-* {
-    /* background: rgba(124, 57, 57, 0.178); */
+:root {
+    --clr-a: rgb(74, 138, 146);
+    --clr-b: rgb(84, 89, 129);
+    --clr-c: rgb(95, 100, 143);
+    --px-5: 10px;
 }
 
+* {
+    /* background: rgba(128, 21, 21, 0.192); */
+}
+
+body {
+    /* background: var(--clr-c); */
+}
+
+.containerMain {}
+
+.containerWeek {
+    display: flex;
+    justify-content: center;
+}
+
+.trainingDay {}
+
+.trainingDay h3 {
+    margin: auto;
+    padding-left: 1rem;
+}
+
+.containerWeek h3 {
+    background: var(--clr-a);
+    border-bottom-left-radius: var(--px-5);
+
+}
+
+.subTitle {
+    background: var(--clr-a);
+    padding-left: 6.5rem;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: var(--px-5);
+}
 
 .trainingMax {
     display: flex;
@@ -15,8 +52,33 @@
 }
 
 .trainingWeek {
-    display: grid;
-    grid-template-columns: repeat(3, 10rem);
+    background: var(--clr-b);
+    box-shadow: 0 5px 5px 2px rgb(65, 63, 63);
+    width: 20rem;
+    margin: auto;
+    text-align: left;
+    /* border-left: 20px solid var(--clr-b); */
+    border-radius: 10px;
 }
 
+.trainingWeek li {
+    list-style: none;
+    font-weight: 600;
+    transform: translateX(-15px);
+    padding: .5rem;
+    background: rgb(99, 132, 136);
+    outline: 2px solid rgb(1, 4, 44);
+    padding-left: 2rem;
+}
 
+.containerContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.reps {
+    font-weight: 700;
+    /* text-align: left; */
+    float: right;
+    padding-right: 2rem;
+}

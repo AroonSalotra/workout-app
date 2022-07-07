@@ -5,13 +5,29 @@ const Lifts = (props) => {
     //     return props.round(result)
     // }
 
-    const calcRoutine = (operand, [...args]) => {
+    const calcRoutine = (operand, week, [...args]) => {
 
         let result = []
+        let reps = []
+
+        switch (week) {
+            case 1:
+                reps.push(5)
+                break;
+            case 2:
+                reps.push(3)
+                break;
+            case 3:
+                reps.push(5, 3, 1)
+                break;
+            default:
+                reps.push("undefined")
+        }
 
         for (let a = 0; a < args.length; a++) {
-            // result.push(<p key={args[a]}>{props.round(operand * args[a])}</p>)
-            result.push(<li key={args[a]}>{props.round(operand * args[a])}</li>)
+            for (let b = 0; b < reps.length; b++) {
+            }
+            result.push(<li key={args[a]}>{props.round(operand * args[a])} <span className="reps">1x{reps}</span>  </li>)
         }
         return <ul>{result}</ul>
     }
@@ -19,8 +35,7 @@ const Lifts = (props) => {
 
     return (
         <div>
-            {/* <p>{calcRoutine(props.operand, props.args)}</p> */}
-            {calcRoutine(props.operand, props.args)}
+            {calcRoutine(props.operand, props.week, props.args)}
         </div>
     );
 }
