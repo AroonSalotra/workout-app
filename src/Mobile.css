@@ -1,0 +1,18 @@
+@media (max-width: 900px) {
+    .containerWeek {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .info p {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .containerWeek {
+        display: flex;
+    }
+
+}

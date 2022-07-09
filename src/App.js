@@ -1,12 +1,14 @@
 
 // import './index.css';
 import './App.css'
+import './Mobile.css'
 // import './trainingMax.css'
 import Landing from "./Landing";
 // import TrainingMax from './TrainingMax';
 import Main from './Main';
 import DebugComponent from './DebugComponent';
 import Lifts from './Lifts';
+import Info from './Info';
 
 function App() {
 
@@ -18,7 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <Landing round={roundNum} />
+      {/* <Landing round={roundNum} /> */}
+      <Info/>
       <Main round={roundNum} />
       {/* <Lifts round={roundNum} /> */}
       {/* <DebugComponent/> */}

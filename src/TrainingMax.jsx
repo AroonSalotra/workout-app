@@ -1,11 +1,11 @@
 
 const TrainingMax = (props) => {
     return (
-        <div>
-            <p>{props.id}</p>
+        <div className="inputContainer">
+            <p className="inputText">{props.id}</p>
             <input type="number" name="" id={props.id} value={props.liftType}
                 onChange={(e) => props.handleChange(e)} />
-            <p>{props.round(props.liftType)} </p>
+            {/* <p>{props.round(props.liftType)} </p> */}
         </div>
     );
 }

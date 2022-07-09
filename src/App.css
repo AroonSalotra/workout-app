@@ -2,6 +2,8 @@
     --clr-a: rgb(74, 138, 146);
     --clr-b: rgb(84, 89, 129);
     --clr-c: rgb(95, 100, 143);
+    --clr-d: rgb(99, 132, 136);
+
     --px-5: 10px;
 }
 
@@ -13,31 +15,48 @@ body {
     /* background: var(--clr-c); */
 }
 
-.containerMain {}
+.containerMain {
+    /* margin: auto;
+    width: 1000px; */
+}
 
 .containerWeek {
-    display: flex;
+    margin-top: 5rem;
+    /* border: 3px solid black; */
+
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(3, 25rem);
 }
 
 .trainingDay {}
 
+
+.subTitle2 {
+    /* text-align: center; */
+    /* padding-left: rem !important; */
+    background: var(--clr-d) !important;
+    border-radius: 0px !important;
+    border-top-left-radius: var(--px-5) !important;
+    border-top-right-radius: var(--px-5) !important;
+    width: 7rem;
+    border-bottom: 5px solid var(--clr-a);
+}
+
 .trainingDay h3 {
     margin: auto;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
+    text-align: center;
 }
 
 .containerWeek h3 {
     background: var(--clr-a);
-    border-bottom-left-radius: var(--px-5);
-
+    /* border-bottom-left-radius: var(--px-5); */
 }
 
 .subTitle {
     background: var(--clr-a);
     padding-left: 6.5rem;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: var(--px-5);
 }
 
 .trainingMax {
@@ -66,9 +85,13 @@ body {
     font-weight: 600;
     transform: translateX(-15px);
     padding: .5rem;
-    background: rgb(99, 132, 136);
+    background: var(--clr-d);
     outline: 2px solid rgb(1, 4, 44);
     padding-left: 2rem;
+}
+
+.trainingWeek li:nth-child(4) {
+    background: var(--clr-d);
 }
 
 .containerContent {
@@ -81,4 +104,33 @@ body {
     /* text-align: left; */
     float: right;
     padding-right: 2rem;
+}
+.info p {
+    max-width: 40rem;
+    margin: auto;
+    text-align: left;
+}
+
+.inputText {
+    background: var(--clr-a);
+    font-weight: 600;
+    border-top-left-radius: var(--px-5);
+    border-top-right-radius: var(--px-5);
+    padding: 5px;
+}
+
+.inputContainer input {
+    background: var(--clr-a);
+    /* border-radius: 50px; */
+    border: none;
+    /* border: 2px solid black; */
+    padding: 5px;
+    padding-left: 20px;
+    transform: translateY(-17px);
+    background: var(--clr-d);
+}
+
+#Overhead {
+    width: fit-content;
+    width: 56px;
 }
