@@ -1,41 +1,41 @@
 :root {
-    --clr-a: rgb(74, 138, 146);
-    --clr-b: rgb(84, 89, 129);
-    --clr-c: rgb(95, 100, 143);
-    --clr-d: rgb(99, 132, 136);
+    /* --clr-main: rgb(84, 89, 129);
+    --clr-highlight: rgb(99, 132, 136); */
+    --clr-bg: rgb(81, 105, 122);
+    --clr-main: rgb(44, 72, 114);
+    --clr-highlight: rgb(99, 132, 136);
 
     --px-5: 10px;
+
+    --clr-a: rgb(74, 138, 146);
+    --clr-c: rgb(95, 100, 143);
 }
 
 * {
     /* background: rgba(128, 21, 21, 0.192); */
+    background: var(--clr-bg);
 }
 
-body {
-    /* background: var(--clr-c); */
-}
+body {}
 
-.containerMain {
-    /* margin: auto;
-    width: 1000px; */
-}
+.containerMain {}
 
 .containerWeek {
     margin-top: 5rem;
     /* border: 3px solid black; */
-
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 25rem);
 }
 
-.trainingDay {}
-
+.trainingDay {
+    background: var(--clr-main);
+}
 
 .subTitle2 {
     /* text-align: center; */
     /* padding-left: rem !important; */
-    background: var(--clr-d) !important;
+    background: var(--clr-highlight) !important;
     border-radius: 0px !important;
     border-top-left-radius: var(--px-5) !important;
     border-top-right-radius: var(--px-5) !important;
@@ -56,6 +56,7 @@ body {
 
 .subTitle {
     background: var(--clr-a);
+    border-bottom: 2px solid var(--clr-c);
     padding-left: 6.5rem;
 }
 
@@ -67,12 +68,17 @@ body {
 }
 
 .trainingMax input {
-    width: 3rem;
+    width: 5rem;
+}
+
+#Overhead {
+    width: fit-content;
+    width: 5rem;
 }
 
 .trainingWeek {
-    background: var(--clr-b);
-    box-shadow: 0 5px 5px 2px rgb(65, 63, 63);
+    background: var(--clr-main);
+    box-shadow: 0 5px 10px 2px rgb(65, 63, 63);
     width: 20rem;
     margin: auto;
     text-align: left;
@@ -85,13 +91,19 @@ body {
     font-weight: 600;
     transform: translateX(-15px);
     padding: .5rem;
-    background: var(--clr-d);
+    background: var(--clr-highlight);
     outline: 2px solid rgb(1, 4, 44);
     padding-left: 2rem;
+    cursor: pointer;
 }
 
-.trainingWeek li:nth-child(4) {
-    background: var(--clr-d);
+
+.trainingWeek li:hover {
+    background: var(--clr-bg);
+}
+
+.list {
+    background: var(--clr-main);
 }
 
 .containerContent {
@@ -104,11 +116,37 @@ body {
     /* text-align: left; */
     float: right;
     padding-right: 2rem;
+    background: var(--clr-d);
 }
-.info p {
-    max-width: 40rem;
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+#infoHeader {
+    background: var(--clr-highlight);
+    padding: .5rem;
+}
+
+#infoSubtitle {
+    background: var(--clr-highlight);
+    transform: translateY(-22px);
+    /* width: fit-content; */
+    width: 20rem;
+    margin: auto;
+    padding: .5rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid var(--clr-c);
+    font-weight: 500;
+}
+
+#infoDesc {
+    max-width: 70rem;
     margin: auto;
     text-align: left;
+    font-size: 1.3rem;
 }
 
 .inputText {
@@ -117,20 +155,46 @@ body {
     border-top-left-radius: var(--px-5);
     border-top-right-radius: var(--px-5);
     padding: 5px;
+    text-align: center;
 }
 
 .inputContainer input {
-    background: var(--clr-a);
+    /* background: var(--clr-highlight); */
     /* border-radius: 50px; */
     border: none;
     /* border: 2px solid black; */
     padding: 5px;
-    padding-left: 20px;
+    padding-left: 70px;
     transform: translateY(-17px);
-    background: var(--clr-d);
+    background: var(--clr-highlight);
+    border-bottom: 5px solid var(--clr-c);
 }
 
-#Overhead {
-    width: fit-content;
-    width: 56px;
+.inputContainer input:hover {
+    background: var(--clr-c);
+}
+
+.calculator form {
+    /* display: flex;
+    flex-direction: column; */
+    width: 10rem;
+    margin: auto;
+}
+
+
+.calculator input, button, select, option {
+    /* width: 2rem; */
+    /* background-color: var(--clr-a); */
+    background-color: rgb(218, 210, 210);
+    border: none;
+    border-radius: 5px;
+}
+
+.calculator button {
+    background: var(--clr-highlight);
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.calculator input[type = "radio"] {
 }

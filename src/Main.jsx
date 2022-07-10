@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TrainingMax from "./TrainingMax";
 import Lifts from "./Lifts";
+import { MdRoom } from "react-icons/md";
 
 const Main = (props) => {
     const [squat, setSquat] = useState("82.2")
@@ -66,7 +67,7 @@ const Main = (props) => {
                         {/* <hr /> */}
                     </div>
                     <div className="trainingDay">
-                        <h3 className="subTitle2">Pull Day</h3>
+                        <h3 className="subTitle2">Pull Day </h3>
                         <h3>Deadlift</h3>
                         <Lifts args={[0.65, 0.75, 0.85]} operand={deadlift} week={1} round={props.round} />
                         <h3>Overhead</h3>
@@ -78,7 +79,6 @@ const Main = (props) => {
                     <h2 className="subTitle">Week Two</h2>
                     <div className="trainingDay">
                         <h3 className="subTitle2">Push Day</h3>
-
                         <h3>Squat</h3>
                         <Lifts args={[0.70, 0.80, 0.90]} operand={squat} week={2} round={props.round} />
                         <h3>Bench</h3>

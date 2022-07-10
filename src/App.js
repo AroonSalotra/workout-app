@@ -9,6 +9,7 @@ import Main from './Main';
 import DebugComponent from './DebugComponent';
 import Lifts from './Lifts';
 import Info from './Info';
+import Calculator from './Calculator';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
     <div className="App">
       {/* <Landing round={roundNum} /> */}
       <Info/>
+      <Calculator/>
       <Main round={roundNum} />
       {/* <Lifts round={roundNum} /> */}
       {/* <DebugComponent/> */}

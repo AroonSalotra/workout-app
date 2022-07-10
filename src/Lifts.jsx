@@ -32,7 +32,7 @@ const Lifts = (props) => {
 
         result.push(<li key={"lastRep"} className="lastRep"> {props.round(operand * args[0])} <span className="reps">5x5</span> </li>)
         result.push(<li key={"assistance"} className="assistance">Assistance <span className="reps">~50</span> </li>)
-        return <ul>{result}</ul>
+        return <ul className="list">{result}</ul>
     }
 
     return (
