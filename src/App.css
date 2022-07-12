@@ -124,6 +124,13 @@ body {}
     flex-direction: column;
 }
 
+.link {
+    font-weight: 600;
+    color: rgb(94, 27, 94);
+    cursor: pointer;
+    user-select: none;
+}
+
 #infoHeader {
     background: var(--clr-highlight);
     padding: .5rem;
@@ -174,6 +181,11 @@ body {}
     background: var(--clr-c);
 }
 
+.calculator {
+    /* padding-top: 20px; */
+    transition: all 1s ease;
+}
+
 .calculator form {
     /* display: flex;
     flex-direction: column; */
@@ -188,7 +200,9 @@ body {}
     background-color: rgb(218, 210, 210);
     border: none;
     border-radius: 5px;
+    text-align: center;
 }
+
 
 .calculator button {
     background: var(--clr-highlight);
@@ -196,5 +210,70 @@ body {}
     margin-top: 1rem;
 }
 
-.calculator input[type = "radio"] {
+.age-weight {}
+
+
+.calculator input[type="radio"] {}
+
+#calories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    /* gap: 50px; */
+    column-gap: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+
+    /* border: 3px solid wheat; */
 }
+
+
+#bulk p, #maintain p, #cut p {
+    width: 5rem;
+}
+
+
+.caloriesInfo {
+    /* width: 2rem; */ 
+    text-align: center;
+    /* width: 15rem; */
+    /* white-space: pre; */
+    flex: 0 1 100%;
+    padding: 10px;
+    transform: translateY(-50px);
+    font-weight: 400;
+    font-style: italic
+}
+
+
+#bulk :nth-child(1), #maintain :nth-child(1), #cut :nth-child(1) {
+    background: var(--clr-a);
+    border-top-left-radius: var(--px-5);
+    border-top-right-radius: var(--px-5);
+    padding-bottom: 5px;
+}
+
+#bulk :nth-child(2), #maintain :nth-child(2), #cut :nth-child(2) {
+    background: var(--clr-highlight);
+    transform: translateY(-16px);
+    border-bottom: 5px solid var(--clr-c);
+}
+
+.icon-m {
+    font-size: 1rem;
+    color: black;
+}
+
+.info-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+#btn-calc:active > .calculator {
+    transform: translateY(10px);
+}
+
+/* .icon-m:active+.info-link {} */

@@ -1,20 +1,24 @@
 import { useState } from "react"
+import './Debug.css'
 
 const DebugComponent = () => {
-    const debuFunc = (operand, [...args]) => {
 
-        // return <h1>{result}</h1>
-        for (let a = 0; a < args.length; a++) {
-            console.log(operand + args[a])
-        }
+    const [display, setDisplay] = useState("none")
+
+    const handleClick = () => {
+      display === "none" ? setDisplay("block") : setDisplay("none")
     }
 
-    let arr = [5,6,7]
-
     return (
-        <div>
+        <div className="debugContainer">
             <h1>Debug</h1>
-            {debuFunc(10, [5,6,7])}
+            <input type="button" id="debugBtn" value=""
+            onClick={() => handleClick()} />
+            <ul className="debugList" style={{display: display}}>
+                <li>Element One</li>
+                <li>Element Two</li>
+                <li>Element Three</li>
+            </ul>
         </div>
     )
 }

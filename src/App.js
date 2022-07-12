@@ -1,5 +1,6 @@
 
 // import './index.css';
+import { useState } from 'react';
 import './App.css'
 import './Mobile.css'
 // import './trainingMax.css'
@@ -13,6 +14,8 @@ import Calculator from './Calculator';
 
 function App() {
 
+    const [display, setDisplay] = useState("block")
+    const [opacity, setOpacity] = useState(1)
   // Rounding Number function to get closest 0.25
 
   const roundNum = (input) => {
@@ -22,8 +25,8 @@ function App() {
   return (
     <div className="App">
       {/* <Landing round={roundNum} /> */}
-      <Info/>
-      <Calculator/>
+      <Info display={display} setDisplay={setDisplay}/>
+      <Calculator display={display} opacity={opacity} />
       <Main round={roundNum} />
       {/* <Lifts round={roundNum} /> */}
       {/* <DebugComponent/> */}
