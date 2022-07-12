@@ -2,6 +2,8 @@ import { useState } from "react";
 import TrainingMax from "./TrainingMax";
 import Lifts from "./Lifts";
 import { MdRoom } from "react-icons/md";
+import { BsFillInfoCircleFill } from "react-icons/bs"
+
 
 const Main = (props) => {
     const [squat, setSquat] = useState("82.2")

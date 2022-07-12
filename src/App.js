@@ -14,7 +14,7 @@ import Calculator from './Calculator';
 
 function App() {
 
-    const [display, setDisplay] = useState("block")
+    const [display, setDisplay] = useState("none")
     const [opacity, setOpacity] = useState(1)
   // Rounding Number function to get closest 0.25
 
