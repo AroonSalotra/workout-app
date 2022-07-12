@@ -13,10 +13,12 @@
 
 * {
     /* background: rgba(128, 21, 21, 0.192); */
-    background: var(--clr-bg);
 }
 
-body {}
+body {
+    background: var(--clr-bg);
+
+}
 
 .containerMain {}
 
@@ -64,7 +66,7 @@ body {}
     display: flex;
     justify-content: center;
     gap: 2rem;
-    text-align: left;
+    /* text-align: left; */
     padding-top: 3rem;
 }
 
@@ -73,8 +75,8 @@ body {}
 }
 
 #Overhead {
-    width: fit-content;
-    width: 5rem;
+    /* width: fit-content; */
+    /* width: 5rem; */
 }
 
 .trainingWeek {
@@ -141,7 +143,7 @@ body {}
     background: var(--clr-highlight);
     transform: translateY(-22px);
     /* width: fit-content; */
-    width: 20rem;
+    max-width: 20rem;
     margin: auto;
     padding: .5rem;
     border-bottom-left-radius: 10px;
@@ -264,6 +266,7 @@ body {}
 .icon-m {
     font-size: 1.5rem;
     background: var(--clr-highlight);
+    z-index: 10;
 }
 
 .info-link {
@@ -279,11 +282,11 @@ body {}
 
 #infoPopup {
     position: absolute;
-    transform: translate(295px, 30px);
+    transform: translate(400px, -30px);
     /* border: 3px solid yellow; */
-    z-index: 2;
+    z-index: 1;
     padding: 10px;
-    width: 15rem;
+    max-width: 30rem;
     text-align: left;
     border: 5px solid var(--clr-highlight);
     border-radius: 5px;

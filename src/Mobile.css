@@ -1,3 +1,19 @@
+@media (max-width: 400px) {
+    .trainingWeek {
+        max-width: 15rem;
+    }
+
+    .trainingMax {
+        flex-direction: column;
+        padding-left: 8rem;
+        width: 5.5rem;
+    }
+    .trainingMax input {
+        /* width: 20rem; */
+    }
+
+}
+
 @media (max-width: 900px) {
     .containerWeek {
         display: flex;
@@ -5,14 +21,33 @@
         gap: 5rem;
     }
 
+    .trainingMax {
+        /* flex-direction: column; */
+    }
+
+    .trainingMax input {
+    }
+
     .info p {
         padding: 1rem;
+    }
+
+    .inputContainer input {
+        padding-left: 0;
+        text-align: center;
     }
 }
 
 @media (max-width: 1400px) {
     .containerWeek {
         display: flex;
+    }
+
+    #infoPopup {
+    transform: translate(0, 0);
+    }
+
+    .trainingMax {
     }
 
 }
