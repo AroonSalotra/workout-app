@@ -10,7 +10,8 @@ const Indicator = () => {
     }
 
     return ( 
-        <div style={{...staticStyle, ...style}} onClick={() => handleClick()} />
+        // <div style={{...staticStyle, ...style}} onClick={() => handleClick()} className="indicator" />
+        <div style={style} onClick={() => handleClick()} className="indicator" />
      );
 }
  

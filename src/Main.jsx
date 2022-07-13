@@ -68,8 +68,7 @@ const Main = (props) => {
                 <div className="trainingWeek">
                     <h2 className="subTitle">Week One</h2>
                     <div className="trainingDay">
-                        <h3 className="subTitle2">Push Day</h3>
-                        <Indicator />
+                        <h3 className="subTitle2">Push Day <Indicator /> </h3>
                         <h3 className="liftType">Squat  </h3>
                         <Lifts args={[0.65, 0.75, 0.85]} operand={squat} week={1} round={props.round} />
                         <h3>Bench</h3>
@@ -88,7 +87,7 @@ const Main = (props) => {
                 <div className="trainingWeek">
                     <h2 className="subTitle">Week Two</h2>
                     <div className="trainingDay">
-                        <h3 className="subTitle2">Push Day</h3>
+                        <h3 className="subTitle2">Push Day <Indicator /></h3>
                         <h3>Squat</h3>
                         <Lifts args={[0.70, 0.80, 0.90]} operand={squat} week={2} round={props.round} />
                         <h3>Bench</h3>

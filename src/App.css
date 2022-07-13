@@ -54,6 +54,14 @@ body {
     justify-content: center;
 }
 
+.indicator {
+    transform: translate(5px, -10px);
+    width: 1rem;
+    height: 1rem;
+    margin-top: 1rem;
+    border-radius: 30px;
+}
+
 .indicator-false {
     width: .75rem;
     height: .75rem;
