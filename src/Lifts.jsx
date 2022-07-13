@@ -1,15 +1,14 @@
+import { useState } from "react"
 const Lifts = (props) => {
 
-    // const calcRoutine = (value, operand) => {
-    //     const result = value * operand
-    //     return props.round(result)
-    // }
 
     const calcRoutine = (operand, week, [...args]) => {
 
         let result = []
         let reps = []
         let index = 0;
+
+
 
         switch (week) {
             case 1:
@@ -30,7 +29,9 @@ const Lifts = (props) => {
             index++
         }
 
-        result.push(<li key={"lastRep"} className="lastRep"> {props.round(operand * args[0])} <span className="reps">5x5</span> </li>)
+        result.push(<li key={"lastRep"} className="lastRep"
+        // style={{background: color}} onClick={() => handleClick()}
+        > {props.round(operand * args[0])} <span className="reps">5x5</span> </li>)
         result.push(<li key={"assistance"} className="assistance">Assistance <span className="reps">~50</span> </li>)
         return <ul className="list">{result}</ul>
     }

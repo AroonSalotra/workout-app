@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import TrainingMax from "./TrainingMax";
 import Lifts from "./Lifts";
 import { MdRoom } from "react-icons/md";
-import { BsFillInfoCircleFill } from "react-icons/bs"
 
 
 const Main = (props) => {
@@ -10,6 +9,11 @@ const Main = (props) => {
     const [bench, setBench] = useState("60")
     const [deadlift, setDeadlift] = useState("60")
     const [overhead, setOverhead] = useState("32.5")
+
+    const ref = useRef(null)
+    const addClass = () => {
+        (ref.current.className == "indicator-false" ? ref.current.className = "indicator-false indicator-true" : ref.current.className = "indicator-false")
+    }
 
     const handleChange = (e) => {
 
@@ -61,8 +65,8 @@ const Main = (props) => {
                 <div className="trainingWeek">
                     <h2 className="subTitle">Week One</h2>
                     <div className="trainingDay">
-                        <h3 className="subTitle2">Push Day</h3>
-                        <h3>Squat</h3>
+                        <h3 className="subTitle2">Push Day <div className="indicator-false" ref={ref} onClick={() => addClass()} /></h3>
+                        <h3 className="liftType">Squat</h3>
                         <Lifts args={[0.65, 0.75, 0.85]} operand={squat} week={1} round={props.round} />
                         <h3>Bench</h3>
                         <Lifts args={[0.65, 0.75, 0.85]} operand={bench} week={1} round={props.round} />

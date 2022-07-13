@@ -5,21 +5,7 @@
     align-items: center;
 }
 
-#debugBtn {
-    width: 5rem;
-    background: wheat;
-}
 
-#debugBtn:active + .debugList {
-    /* transform: translateY(10px); */
-}
-
-.debugList {
-    list-style-type: none;
-    text-align: left;
-    transition: transform .1s ease ;
-}
-
-.debugList li {
-    
+.newClass {
+    color: wheat;
 }

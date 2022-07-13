@@ -1,24 +1,18 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import './Debug.css'
 
 const DebugComponent = () => {
 
-    const [display, setDisplay] = useState("none")
+    const ref = useRef(null)
 
-    const handleClick = () => {
-      display === "none" ? setDisplay("block") : setDisplay("none")
+    const addClass = () => {
+        (ref.current.className == "currentClass" ? ref.current.className = "newClass" : ref.current.className = "currentClass")
     }
 
     return (
         <div className="debugContainer">
-            <h1>Debug</h1>
-            <input type="button" id="debugBtn" value=""
-            onClick={() => handleClick()} />
-            <ul className="debugList" style={{display: display}}>
-                <li>Element One</li>
-                <li>Element Two</li>
-                <li>Element Three</li>
-            </ul>
+            <h1 ref={ref} className="currentClass" style={{ userSelect: "none" }} onClick={() => addClass()}>Test Component</h1>
+            <h1>Test Component</h1>
         </div>
     )
 }
