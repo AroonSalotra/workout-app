@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AroonSalotra/workout-app/static/css/main.c79d94fc.css",
+    "main.js": "/AroonSalotra/workout-app/static/js/main.ba02c9a7.js",
+    "static/js/787.1e62910f.chunk.js": "/AroonSalotra/workout-app/static/js/787.1e62910f.chunk.js",
+    "index.html": "/AroonSalotra/workout-app/index.html",
+    "main.c79d94fc.css.map": "/AroonSalotra/workout-app/static/css/main.c79d94fc.css.map",
+    "main.ba02c9a7.js.map": "/AroonSalotra/workout-app/static/js/main.ba02c9a7.js.map",
+    "787.1e62910f.chunk.js.map": "/AroonSalotra/workout-app/static/js/787.1e62910f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c79d94fc.css",
+    "static/js/main.ba02c9a7.js"
+  ]
+}
