@@ -1,29 +1,34 @@
 const PlanTwo = (props) => {
 
+    let squat = props.squat;
+    let deadlift = props.deadlift;
+
+    // console.log(squat)
+
     const handleRoutine = (day) => {
-        let reps = <p className="rep">* x10</p>
-
-        return <div className="trainingWeek">
-            <h3 className="subTitle2">{day == "A" ? "Split A" : "Split B"}</h3>
-            <div className="trainingDay">
-                <h3 className="subTitle">Bulgarian Split Squat / Lunge</h3>{reps}
-
-                {day === "A" ?
-                    <>
-                        <h3 className="subTitle">Floor Press</h3>{reps}
-                        <h3 className="subTitle">Straight-legged Deadlift</h3>{reps}
-                    </>
-                    :
-                    <>
-                        <h3 className="subTitle">Seated Shoulder Press</h3>{reps}
-                        <h3 className="subTitle">Standing two-dumbell bent over row</h3>{reps}
-                    </>
-                }
-
-                <h3 className="subTitle">Plank</h3>{reps}
-            </div>
-        </div>
+        let data;
+        day === "A" ? data = handleArray(liftsAll, 1, liftsA) : data = handleArray(liftsAll, 1, liftsB)
+        return <ul className="list">
+            {data.map((elem) => {
+                return <li key={elem}>{elem} <span className="reps">~ x 10</span> </li>
+            })}
+        </ul>
     }
+
+    let liftsAll = ["Bulgarian Split Squat", "Plank"]
+    let liftsA = ["Floor Press", "Straight-legged Deadlift"]
+    let liftsB = ["Seated Shoulder Press, Standing Two-Dumbell Bent Over Row"]
+
+    const handleArray = (data, index, value) => {
+        let result = data;
+        for (let a = 0; a < value.length; a++) {
+            result.splice(index, 0, value[a])
+            index++
+        }
+        return result
+    }
+
+    // console.log(handleArray(liftsAll, 1, liftsA))
 
 
     return (

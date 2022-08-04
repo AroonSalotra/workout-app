@@ -34,12 +34,6 @@ function App() {
     return Math.ceil(input / 2.5) * 2.5
   }
 
-  useEffect(() => {
-    return () => {
-      <Link to={value}></Link>
-      // console.log("effect")
-    }
-  }, [value])
 
   return (
     <BrowserRouter>
@@ -54,8 +48,8 @@ function App() {
           <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}
             squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
             setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
-          />}></Route>
-          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay />}></Route>
+          />}> </Route>
+          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay squat={squat} />}></Route>
         </Routes>
         {/* <Landing round={roundNum} /> */}
         {/* <Info display={display} setDisplay={setDisplay} /> */}
