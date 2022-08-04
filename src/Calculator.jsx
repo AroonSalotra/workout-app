@@ -100,13 +100,13 @@ const Calculator = (props) => {
                 <div className="age-weight">
                     <label htmlFor="female">Age</label>
                     <input type="number" name="" id="age" max={100} onChange={handleChange} />
-                    <label htmlFor="female">Weight <em>in kg</em> </label>
-                    <input type="number" name="" id="weight" onChange={handleChange} placeholder="in kg" />
+                    <label htmlFor="female">Weight <span className="placeholder">in kg</span></label>
+                    <input type="number" name="" id="weight" onChange={handleChange}/>
                 </div>
-                <label htmlFor="height">Height <em>in ft</em> </label>
+                <label htmlFor="height">Height <span className="placeholder">in ft</span></label>
                 <div>
                     <select name="" id="height" defaultValue={"default"} onChange={changeHeight}>
-                        <option value="default" disabled>Choose</option>
+                        <option value="default" disabled></option>
                         <option value={150}  >5ft</option>
                         <option value={161}>5 - 5.6 ft</option>
                         <option value={175}  >5.6 - 5.8 ft</option>

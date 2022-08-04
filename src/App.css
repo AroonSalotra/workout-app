@@ -1,14 +1,19 @@
 :root {
-    /* --clr-main: rgb(84, 89, 129);
-    --clr-highlight: rgb(99, 132, 136); */
-    --clr-bg: rgb(79, 98, 110);
+    /* --clr-bg: rgb(79, 98, 110); */
+    --clr-bg: rgb(93, 104, 107);
     --clr-main: rgb(44, 72, 114);
-    --clr-highlight: rgb(99, 132, 136);
-
-    --px-5: 10px;
-
+    --clr-highlight: #99a2a3;
     --clr-a: rgb(74, 138, 146);
     --clr-c: rgb(95, 100, 143);
+
+
+    --px-5: 10px;
+}
+
+*, *::after *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 * {
@@ -17,7 +22,7 @@
 
 body {
     background: var(--clr-bg);
-
+    
 }
 
 .containerMain {}
@@ -36,8 +41,9 @@ body {
 
 .subTitle {
     background: var(--clr-a);
-    border-bottom: 2px solid var(--clr-c);
-    padding-left: 6.5rem;
+    /* border-bottom: 2px solid var(--clr-c); */
+    /* padding-left: 6.5rem; */
+    text-align: center;
     font-weight: 600;
 }
 
@@ -59,10 +65,14 @@ body {
     width: 1rem;
     height: 1rem;
     margin-top: 1rem;
-    border-radius: 30px;
+    border-radius: 50px;
+    outline: 2px solid black;
+    /* background: var(--clr-highlight); */
 }
 
-.indicator-false {
+.indicator:hover {}
+
+/* .indicator-false {
     width: .75rem;
     height: .75rem;
     border-radius: 20px;
@@ -84,8 +94,7 @@ body {
 .indicator-false:hover, .indicator-true:hover {
     outline: 5px solid var(--clr-main);
     transition: outline 100ms ease;
-
-}
+} */
 
 .trainingDay h3 {
     margin: auto;
@@ -97,8 +106,6 @@ body {
     background: var(--clr-a);
     /* border-bottom-left-radius: var(--px-5); */
 }
-
-
 
 .trainingMax {
     display: flex;
@@ -140,7 +147,6 @@ body {
     cursor: pointer;
 }
 
-
 .trainingWeek li:hover {
     background: var(--clr-bg);
 }
@@ -154,6 +160,21 @@ body {
     flex-direction: column;
 }
 
+.rep {
+    background: var(--clr-highlight);
+    text-align: center;
+    width: 15rem;
+    /* margin: auto; */
+    margin-left: 2.5rem;
+    border: 2px solid black;
+    height: 1.75rem;
+    cursor: pointer;
+}
+
+.rep:hover {
+    background: var(--clr-bg);
+}
+
 .reps {
     font-weight: 700;
     /* text-align: left; */
@@ -161,7 +182,6 @@ body {
     padding-right: 2rem;
     background: var(--clr-d);
 }
-
 
 .info {
     display: flex;
@@ -247,6 +267,11 @@ body {
     text-align: center;
 }
 
+.calculator input[type="number"] {
+    width: 3rem;
+}
+
+
 
 .calculator button {
     background: var(--clr-highlight);
@@ -254,7 +279,13 @@ body {
     margin-top: 1rem;
 }
 
-.age-weight {}
+.age-weight {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .5rem;
+}
 
 
 .calculator input[type="radio"] {}
@@ -329,17 +360,21 @@ body {
     padding: 10px;
     max-width: 30rem;
     text-align: left;
-    border: 5px solid var(--clr-bg);
-    border-radius: 5px;
+    /* border: 2px solid var(--clr-main); */
+    border-bottom: 2px solid var(--clr-main);
+    /* border-radius: 20px; */
     background: var(--clr-highlight);
 }
-
-
 
 .liftType {
     display: flex;
     justify-content: center;
+}
 
+.placeholder {
+    color: rgb(46, 43, 43);
+    font-style: italic;
+    font-size: .9rem;
 }
 
 /* .icon-m:active+.info-link {} */

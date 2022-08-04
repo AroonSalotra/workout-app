@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const Indicator = () => {
 
-    const [style, setStyle] = useState({background: "red"})
-    const staticStyle = {width: "1rem", height: "1rem", marginTop: "1rem", borderRadius: "50px"}
+    const [style, setStyle] = useState({background: ""})
+    // const staticStyle = {width: "1rem", height: "1rem", marginTop: "1rem", borderRadius: "50px"}
 
     const handleClick = () => {
-      style.background === "red" ? setStyle({background: "green"}) : setStyle({background: "red"})
+      style.background === "green" ? setStyle({background: "#638488"}) : setStyle({background: "green"})
     }
 
     return ( 

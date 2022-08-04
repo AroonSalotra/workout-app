@@ -1,27 +1,20 @@
 import { useState } from "react";
 
-const DebugChild = () => {
-    const [style, setStyle] = useState({background: "red"})
-    const staticStyle = {width: "5rem", height: "5rem", marginTop: "10px"}
+const DebugChild = (props) => {
 
-
-
-    // const style = {width: "5rem", height: "5rem", backgroundColor: "red"}
-
-    const handleClick = () => {
-        // setStyle({background: "green"})
-        style.background === "red" ? setStyle({background: "green", borderRadius: "50px"}) : setStyle({background: "red"})
+    const handleClick = (event) => {
+        props.setValue(event.target.value)
     }
 
-    // console.log(style.background)
-
-
-
-    return ( 
-        <div style={{...style, ...staticStyle}} onClick={() => handleClick()}>
-
+    return (
+        <div>
+            <select name="" id="" onChange={handleClick}>
+                <option value="">Choose a plan</option>
+                <option value="plan-1">Plan 1</option>
+                <option value="plan-2">Plan 2</option>
+            </select>
         </div>
-     );
+    );
 }
- 
+
 export default DebugChild;

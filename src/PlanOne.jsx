@@ -1,5 +1,5 @@
 import { useState } from "react"
-const Lifts = (props) => {
+const PlanOne = (props) => {
 
 
     const calcRoutine = (operand, week, [...args]) => {
@@ -7,8 +7,6 @@ const Lifts = (props) => {
         let result = []
         let reps = []
         let index = 0;
-
-
 
         switch (week) {
             case 1:
@@ -29,18 +27,16 @@ const Lifts = (props) => {
             index++
         }
 
-        result.push(<li key={"lastRep"} className="lastRep"
-        // style={{background: color}} onClick={() => handleClick()}
-        > {props.round(operand * args[0])} <span className="reps">5x5</span> </li>)
+        result.push(<li key={"lastRep"} className="lastRep"> {props.round(operand * args[0])} <span className="reps">5x5</span> </li>)
         result.push(<li key={"assistance"} className="assistance">Assistance <span className="reps">~50</span> </li>)
         return <ul className="list">{result}</ul>
     }
 
     return (
-        <div>
+        <>
             {calcRoutine(props.operand, props.week, props.args)}
-        </div>
+        </>
     );
 }
 
-export default Lifts;
+export default PlanOne;
