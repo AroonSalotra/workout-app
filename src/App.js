@@ -19,6 +19,12 @@ import TrainingMaxDisplay from './TrainingMaxDisplay';
 
 function App() {
 
+  const [squat, setSquat] = useState("82.2")
+  const [bench, setBench] = useState("60")
+  const [deadlift, setDeadlift] = useState("60")
+  const [overhead, setOverhead] = useState("32.5")
+
+
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
   // Rounding Number function to get closest 0.25
@@ -39,10 +45,16 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar setValue={setValue} value={value} />
-        <TrainingMaxDisplay/>
+        <TrainingMaxDisplay
+          squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
+          setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
+        />
         <Calculator display={display} opacity={opacity} />
         <Routes>
-          <Route exact path="/workout-app/plan-1" element={<Main round={roundNum} />}></Route>
+          <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}
+            squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
+            setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
+          />}></Route>
           <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay />}></Route>
         </Routes>
         {/* <Landing round={roundNum} /> */}

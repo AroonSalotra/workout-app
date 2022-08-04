@@ -2,10 +2,7 @@ import TrainingMax from "./TrainingMax";
 import { useState } from "react";
 
 const TrainingMaxDisplay = (props) => {
-    const [squat, setSquat] = useState("82.2")
-    const [bench, setBench] = useState("60")
-    const [deadlift, setDeadlift] = useState("60")
-    const [overhead, setOverhead] = useState("32.5")
+   
 
     const handleChange = (e) => {
 
@@ -14,37 +11,38 @@ const TrainingMaxDisplay = (props) => {
 
         switch (id) {
             case "Squat":
-                liftType = setSquat;
+                liftType = props.setSquat;
                 break;
             case "Bench":
-                liftType = setBench;
+                liftType = props.setBench;
                 break;
             case "Deadlift":
-                liftType = setDeadlift;
+                liftType = props.setDeadlift;
                 break;
             case "Overhead":
-                liftType = setOverhead;
+                liftType = props.setOverhead;
                 break;
             default:
                 liftType = "undefined"
         }
         return liftType(e.target.value)
     }
+
     return (
         <div className="trainingMax">
-            <TrainingMax liftType={squat}
+            <TrainingMax liftType={props.squat}
                 round={props.round}
                 handleChange={handleChange}
                 id="Squat" />
-            <TrainingMax liftType={bench}
+            <TrainingMax liftType={props.bench}
                 round={props.round}
                 handleChange={handleChange}
                 id="Bench" />
-            <TrainingMax liftType={deadlift}
+            <TrainingMax liftType={props.deadlift}
                 round={props.round}
                 handleChange={handleChange}
                 id="Deadlift" />
-            <TrainingMax liftType={overhead}
+            <TrainingMax liftType={props.overhead}
                 round={props.round}
                 handleChange={handleChange}
                 id="Overhead" />
