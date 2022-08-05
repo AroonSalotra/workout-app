@@ -28,7 +28,8 @@ const Navbar = (props) => {
     return (
         <>
             <div className="navbar-container">
-                <h1>Workout App</h1>
+                <h1 className="height-s">Workout App</h1>
+                <p >Choose a plan below</p>
                 <div className="navbar-links">
                     {data.map(({ text, redirect, id }) => {
                         return <Link to={redirect} key={id} id={text} className={display}

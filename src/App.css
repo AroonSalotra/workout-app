@@ -1,6 +1,6 @@
 :root {
     /* --clr-bg: rgb(79, 98, 110); */
-    --clr-bg: #79808A;
+    --clr-bg: #7584a8;
     --clr-main: #2c4872;
     --clr-highlight: #bbc3ca;
     --clr-a: rgb(74, 138, 146);
@@ -17,7 +17,8 @@
 }
 
 * {
-    /* background: rgba(128, 21, 21, 0.192); */
+    /* background: rgba(180, 80, 80, 0.192); */
+    /* outline: 3px solid red; */
 }
 
 body {
@@ -25,14 +26,19 @@ body {
 
 }
 
+.height-s {
+    height: 1rem;
+}
+
 .containerMain {}
 
 .navbar-container {
     background: var(--clr-main);
-    background:  #6b7077;
+    background:  #3f5479;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-bottom: 1px solid black;
 }
 
 a:-webkit-any-link {
@@ -58,7 +64,7 @@ link {
     height: .25rem;
     width: 6rem;
     transform: translateY(2.5rem);
-    transition: transform 400ms ease-out;
+    transition: transform 400ms ease-out, width 300ms ease-out;
 }
 
 #link-one {
@@ -308,6 +314,12 @@ link {
     margin: auto;
 }
 
+.view-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: .5rem;
+}
 
 .calculator input, button, select, option {
     /* width: 2rem; */
@@ -386,8 +398,18 @@ link {
 
 .icon-m {
     font-size: 1.5rem;
-    background: var(--clr-highlight);
+    /* background: var(--clr-highlight); */
+    color: var(--clr-main);
     z-index: 10;
+    cursor: pointer;
+}
+
+.icon-m:hover {
+    font-size: 1.6rem;
+}
+
+.icon-m:active {
+    font-size: 1.4rem;
 }
 
 .info-link {

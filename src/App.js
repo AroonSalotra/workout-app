@@ -28,10 +28,11 @@ function App() {
 
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
+
   // Rounding Number function to get closest 0.25
   const [value, setValue] = useState(null)
 
-  const [plan, setPlan] = useState(null)
+  const [plan, setPlan] = useState("Unselected Plan")
 
   const roundNum = (input) => {
     return Math.ceil(input / 2.5) * 2.5
@@ -46,8 +47,10 @@ function App() {
           squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
           setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
         />
-        <ViewPlan plan={plan} />
+        <ViewPlan plan={plan} display={display} setDisplay={setDisplay} />
+
         <Calculator display={display} opacity={opacity} />
+
         <Routes>
           <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}
             squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
