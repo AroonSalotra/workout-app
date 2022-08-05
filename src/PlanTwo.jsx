@@ -10,7 +10,8 @@ const PlanTwo = (props) => {
                 .map((elem) => {
                     return <div>
                         <h3 className="subTitle">{elem.type}</h3>
-                        <p>{elem.lift ? props.round(elem.lift / elem.operand) : "No Weights"}</p>
+                        <p className="rep">{elem.lift ? props.round(elem.lift / elem.operand) : "No Weights"}
+                            <span className="reps">~ x 10</span></p>
                     </div>
                 })
             }
