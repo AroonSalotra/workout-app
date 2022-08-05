@@ -8,7 +8,7 @@ const PlanTwo = (props) => {
         return <div>
             {(day === "A" ? handleArray(newLiftsAll, 1, newLiftsA) : handleArray(newLiftsAll, 1, newLiftsB))
                 .map((elem) => {
-                    return <div>
+                    return <div key={elem.id}>
                         <h3 className="subTitle">{elem.type}</h3>
                         <p className="rep">{elem.lift ? props.round(elem.lift / elem.operand) : "No Weights"}
                             <span className="reps">~ x 10</span></p>

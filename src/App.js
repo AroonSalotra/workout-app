@@ -16,6 +16,7 @@ import PlanTwo from './PlanTwo';
 import PlanTwoDisplay from './PlanTwoDisplay';
 import Navbar from './Navbar';
 import TrainingMaxDisplay from './TrainingMaxDisplay';
+import ViewPlan from './ViewPlan';
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
   // Rounding Number function to get closest 0.25
   const [value, setValue] = useState(null)
 
+  const [plan, setPlan] = useState(null)
+
   const roundNum = (input) => {
     return Math.ceil(input / 2.5) * 2.5
   }
@@ -38,11 +41,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar setValue={setValue} value={value} />
+        <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
         <TrainingMaxDisplay
           squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
           setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
         />
+        <ViewPlan plan={plan} />
         <Calculator display={display} opacity={opacity} />
         <Routes>
           <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}

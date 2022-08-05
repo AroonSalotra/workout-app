@@ -1,10 +1,10 @@
 :root {
     /* --clr-bg: rgb(79, 98, 110); */
-    --clr-bg: rgb(93, 104, 107);
-    --clr-main: rgb(44, 72, 114);
-    --clr-highlight: #99a2a3;
+    --clr-bg: #79808A;
+    --clr-main: #2c4872;
+    --clr-highlight: #bbc3ca;
     --clr-a: rgb(74, 138, 146);
-    --clr-c: rgb(95, 100, 143);
+    --clr-c: rgb(76, 79, 99);
 
 
     --px-5: 10px;
@@ -26,6 +26,49 @@ body {
 }
 
 .containerMain {}
+
+.navbar-container {
+    background: var(--clr-main);
+    background:  #6b7077;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+link {
+    text-decoration: none;
+}
+
+.link-hover {
+    background: var(--clr-highlight);
+    position: absolute;
+    height: .25rem;
+    width: 6rem;
+    transform: translateY(2.5rem);
+    transition: transform 400ms ease-out;
+}
+
+#link-one {
+    transform: translate(-4.4rem, 2.5rem);
+}
+
+#link-two {
+    transform: translate(3.6rem, 2.5rem);
+    width: 7rem;
+}
 
 .containerWeek {
     margin-top: 5rem;
@@ -139,11 +182,15 @@ body {
     justify-content: center;
 }
 
-
 .select-list {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    padding: 0;
+}
+
+.select-btn {
+    cursor: pointer;
 }
 
 .trainingWeek li:hover {
@@ -190,10 +237,13 @@ body {
 }
 
 .link {
-    font-weight: 600;
+    /* font-weight: 600;
     color: rgb(94, 27, 94);
     cursor: pointer;
-    user-select: none;
+    user-select: none; */
+
+    text-decoration: none;
+    font-weight: 700;
 }
 
 #infoHeader {
@@ -349,6 +399,7 @@ body {
 
 .opacity-none {
     opacity: 0;
+    pointer-events: none;
 }
 
 #btn-calc:active>.calculator {
