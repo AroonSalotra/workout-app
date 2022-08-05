@@ -1,23 +1,36 @@
-const PlanTwo = (props) => {
+import { useId } from "react";
 
-    let squat = props.squat;
-    let deadlift = props.deadlift;
+const PlanTwo = (props) => {
 
     // console.log(squat)
 
     const handleRoutine = (day) => {
-        let data;
-        day === "A" ? data = handleArray(liftsAll, 1, liftsA) : data = handleArray(liftsAll, 1, liftsB)
-        return <ul className="list">
-            {data.map((elem) => {
-                return <li key={elem}>{elem} <span className="reps">~ x 10</span> </li>
-            })}
-        </ul>
+        return <div>
+            {(day === "A" ? handleArray(newLiftsAll, 1, newLiftsA) : handleArray(newLiftsAll, 1, newLiftsB))
+                .map((elem) => {
+                    return <div>
+                        <h3 className="subTitle">{elem.type}</h3>
+                        <p>{elem.lift ? props.round(elem.lift / elem.operand) : "No Weights"}</p>
+                    </div>
+                })
+            }
+        </div>
     }
 
-    let liftsAll = ["Bulgarian Split Squat", "Plank"]
-    let liftsA = ["Floor Press", "Straight-legged Deadlift"]
-    let liftsB = ["Seated Shoulder Press, Standing Two-Dumbell Bent Over Row"]
+    let newLiftsAll = [
+        { type: "Bulgarian Split Squat", lift: props.squat, operand: 3.5, id: 1 },
+        { type: "Plank", lift: null, id: 2 }
+    ]
+
+    let newLiftsA = [
+        { type: "Floor Press", lift: null, id: 3 },
+        { type: "Straight-Legged Deadlift", lift: props.deadlift, operand: 1.75, id: 4 }
+    ]
+
+    let newLiftsB = [
+        { type: "Seated Shoulder Press", lift: props.overhead, operand: 2.75, id: 5 },
+        { type: "Bent Over Row", lift: props.bench, operand: 3, id: 6 }
+    ]
 
     const handleArray = (data, index, value) => {
         let result = data;
@@ -27,9 +40,6 @@ const PlanTwo = (props) => {
         }
         return result
     }
-
-    // console.log(handleArray(liftsAll, 1, liftsA))
-
 
     return (
         <>

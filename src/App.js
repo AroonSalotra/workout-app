@@ -49,7 +49,11 @@ function App() {
             squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
             setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
           />}> </Route>
-          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay squat={squat} />}></Route>
+          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay squat={squat}
+            deadlift={deadlift}
+            bench={bench}
+            overhead={overhead}
+            round={roundNum} />}></Route>
         </Routes>
         {/* <Landing round={roundNum} /> */}
         {/* <Info display={display} setDisplay={setDisplay} /> */}
