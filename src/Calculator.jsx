@@ -91,17 +91,18 @@ const Calculator = (props) => {
 
     return (
         <div className="calculator" style={{ display: props.display }}>
-            <h3>Calorie Calculator</h3>
-            <form action="">
+            <h3 className="subTitle">Calorie Calculator</h3>
+            <form action="" className="rep-static">
                 <input type="radio" name="sex" id="male" onChange={handleChange} />
                 <label htmlFor="male">Male</label>
                 <input type="radio" name="sex" id="female" onChange={handleChange} />
                 <label htmlFor="female">Female</label>
+
                 <div className="age-weight">
                     <label htmlFor="female">Age</label>
                     <input type="number" name="" id="age" max={100} onChange={handleChange} />
                     <label htmlFor="female">Weight <span className="placeholder">in kg</span></label>
-                    <input type="number" name="" id="weight" onChange={handleChange}/>
+                    <input type="number" name="" id="weight" onChange={handleChange} />
                 </div>
                 <label htmlFor="height">Height <span className="placeholder">in ft</span></label>
                 <div>
@@ -115,7 +116,7 @@ const Calculator = (props) => {
                     </select>
                 </div>
                 <div>
-                    <button onClick={() => handleClick()} type="button">Calculate </button>
+                    <button onClick={() => handleClick()} type="button" >Calculate </button>
                 </div>
             </form>
             {/* <h3>Age: {age}</h3>

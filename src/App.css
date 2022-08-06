@@ -23,7 +23,11 @@
 
 body {
     background: var(--clr-bg);
+    overflow: scroll;
+}
 
+html {
+    /* width: 100vw; */
 }
 
 .height-s {
@@ -34,11 +38,12 @@ body {
 
 .navbar-container {
     background: var(--clr-main);
-    background:  #3f5479;
+    background: #3f5479;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid black;
+    color: white;
 }
 
 a:-webkit-any-link {
@@ -52,6 +57,7 @@ a:-webkit-any-link {
     gap: 2rem;
     font-size: 1.75rem;
     font-weight: 400;
+    padding-bottom: .5rem;
 }
 
 link {
@@ -59,12 +65,13 @@ link {
 }
 
 .link-hover {
-    background: var(--clr-highlight);
+    background: var(--clr-a);
     position: absolute;
-    height: .25rem;
+    height: .4rem;
+    border-radius: 100px;
     width: 6rem;
     transform: translateY(2.5rem);
-    transition: transform 400ms ease-out, width 300ms ease-out;
+    transition: transform 120ms ease-out, width 300ms ease-out;
 }
 
 #link-one {
@@ -81,6 +88,7 @@ link {
     /* border: 3px solid black; */
     display: grid;
     justify-content: center;
+    align-items: center;
     grid-template-columns: repeat(3, 25rem);
 }
 
@@ -113,7 +121,6 @@ link {
     transform: translate(5px, -10px);
     width: 1rem;
     height: 1rem;
-    margin-top: 1rem;
     border-radius: 50px;
     outline: 2px solid black;
     /* background: var(--clr-highlight); */
@@ -147,7 +154,8 @@ link {
     /* gap: 2rem; */
     column-gap: 2rem;
     /* text-align: left; */
-    padding-top: 3rem;
+    /* padding-top: 3rem; */
+    /* border: 3px solid red; */
 }
 
 .trainingMax input {
@@ -165,7 +173,6 @@ link {
     background: var(--clr-main);
     box-shadow: 0 5px 10px 2px rgb(65, 63, 63);
     width: 20rem;
-    /* margin: auto; */
     text-align: left;
     /* border-left: 20px solid var(--clr-b); */
     /* border-radius: 10px; */
@@ -217,12 +224,16 @@ link {
     /* text-align: center; */
     padding: .3rem;
     padding-left: 2rem;
-    width: 13rem;
-    /* margin: auto; */
+    max-width: 13rem;
     margin-left: 2.5rem;
     border: 2px solid black;
     /* height: 1.75rem; */
     cursor: pointer;
+}
+
+.rep-static {
+    /* background: var(--clr-highlight); */
+
 }
 
 .rep:hover {
@@ -286,6 +297,7 @@ link {
     text-align: center;
 }
 
+
 .inputContainer input {
     /* background: var(--clr-highlight); */
     /* border-radius: 50px; */
@@ -304,7 +316,17 @@ link {
 
 .calculator {
     /* padding-top: 20px; */
-    transition: all 1s ease;
+    /* transition: all 1s ease; */
+    background: var(--clr-main);
+    width: 25rem;
+    margin: auto;
+    /* width: fit-content;
+    margin: auto;
+    padding: 10px;
+    padding-top: 5px; */
+    border-radius: 20px;
+    /* padding-bottom: 2rem; */
+    font-weight: 600;
 }
 
 .calculator form {
@@ -315,7 +337,7 @@ link {
 }
 
 .view-container {
-    display: flex;
+    /* display: flex;/ */
     align-items: baseline;
     justify-content: center;
     gap: .5rem;
@@ -326,7 +348,7 @@ link {
     /* background-color: var(--clr-a); */
     background-color: rgb(218, 210, 210);
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px;/ */
     text-align: center;
 }
 
@@ -369,7 +391,6 @@ link {
     width: 5rem;
 }
 
-
 .caloriesInfo {
     /* width: 2rem; */
     text-align: center;
@@ -397,19 +418,25 @@ link {
 }
 
 .icon-m {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     /* background: var(--clr-highlight); */
-    color: var(--clr-main);
-    z-index: 10;
+    /* color: var(--clr-main); */
+    /* z-index: 10;/ */
     cursor: pointer;
 }
 
 .icon-m:hover {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .icon-m:active {
     font-size: 1.4rem;
+}
+
+.info-text {
+    max-width: 35rem;
+    margin: auto;
+    text-align: left;
 }
 
 .info-link {
@@ -422,6 +449,8 @@ link {
 .opacity-none {
     opacity: 0;
     pointer-events: none;
+    height: 0;
+    width: 0;
 }
 
 #btn-calc:active>.calculator {

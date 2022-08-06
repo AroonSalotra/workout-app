@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Navbar = (props) => {
 
-    const [display, setDisplay] = useState("ler")
+    const [display, setDisplay] = useState("opacity-none")
     const [position, setPosition] = useState(null)
 
     const data = [
@@ -19,12 +19,12 @@ const Navbar = (props) => {
         if (e.target.id === "Barbell") {
             props.setPlan("5/3/1 Beginner")
             setPosition("link-one")
+            setDisplay("")
         } else {
             props.setPlan("PPL Beginner")
             setPosition("link-two")
         }
     }
-
     return (
         <>
             <div className="navbar-container">
@@ -32,10 +32,10 @@ const Navbar = (props) => {
                 <p >Choose a plan below</p>
                 <div className="navbar-links">
                     {data.map(({ text, redirect, id }) => {
-                        return <Link to={redirect} key={id} id={text} className={display}
+                        return <Link to={redirect} key={id} id={text}
                             onClick={(e) => handleClick(e)}>{text}</Link>
                     })}
-                    <div className={`link-hover`} id={position}></div>
+                    <div className={`link-hover ${display}`} id={position}></div>
                 </div>
             </div>
             {/* <Dropdown handleClick={handleClick} plan={props.plan} setPlan={props.setPlan} /> */}
