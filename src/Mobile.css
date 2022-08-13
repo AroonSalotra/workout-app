@@ -1,15 +1,23 @@
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .trainingWeek {
         max-width: 15rem;
     }
 
     .trainingMax {
         flex-direction: column;
-        padding-left: 8rem;
-        width: 5.5rem;
+        /* padding-left: 8rem; */
+        /* width: 5.5rem; */
     }
     .trainingMax input {
         /* width: 20rem; */
+    }
+
+    .rep {
+        margin-left: 0;
+    }
+
+    .calculator {
+        width: 15rem;
     }
 
 }
@@ -50,6 +58,7 @@
 @media (max-width: 1400px) {
     .containerWeek {
         display: flex;
+        gap: 1rem;
     }
 
     #infoPopup {

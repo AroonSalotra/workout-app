@@ -46,6 +46,10 @@ html {
     color: white;
 }
 
+.navbar-container > h1 {
+    font-size: 2.5rem;
+}
+
 a:-webkit-any-link {
     text-decoration: none;
     color: inherit;
@@ -151,6 +155,7 @@ link {
 .trainingMax {
     display: flex;
     justify-content: center;
+    align-items: center;
     /* gap: 2rem; */
     column-gap: 2rem;
     /* text-align: left; */
@@ -221,13 +226,11 @@ link {
 
 .rep {
     background: var(--clr-highlight);
-    /* text-align: center; */
     padding: .3rem;
     padding-left: 2rem;
     max-width: 13rem;
     margin-left: 2.5rem;
     border: 2px solid black;
-    /* height: 1.75rem; */
     cursor: pointer;
 }
 
@@ -318,7 +321,7 @@ link {
     /* padding-top: 20px; */
     /* transition: all 1s ease; */
     background: var(--clr-main);
-    width: 25rem;
+    max-width: 25rem;
     margin: auto;
     /* width: fit-content;
     margin: auto;

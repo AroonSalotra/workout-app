@@ -27,7 +27,7 @@ const Navbar = (props) => {
     }
     return (
         <>
-            <div className="navbar-container">
+            <nav className="navbar-container">
                 <h1 className="height-s">Workout App</h1>
                 <p >Choose a plan below</p>
                 <div className="navbar-links">
@@ -37,7 +37,7 @@ const Navbar = (props) => {
                     })}
                     <div className={`link-hover ${display}`} id={position}></div>
                 </div>
-            </div>
+            </nav>
             {/* <Dropdown handleClick={handleClick} plan={props.plan} setPlan={props.setPlan} /> */}
         </>
     );
