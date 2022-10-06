@@ -25,48 +25,66 @@ function App() {
   const [deadlift, setDeadlift] = useState("60")
   const [overhead, setOverhead] = useState("32.5")
 
+  const [liftAmount, setLiftAmount] = useState({
+    squat: 80,
+    bench: 60,
+    deadlift: 90,
+    overhead: 40
+  })
+
 
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
 
-  // Rounding Number function to get closest 0.25
   const [value, setValue] = useState(null)
 
   const [plan, setPlan] = useState("Unselected Plan")
 
-  const roundNum = (input) => {
-    return Math.ceil(input / 2.5) * 2.5
-  }
+  const roundNum = (input) => Math.ceil(input / 2.5) * 2.5
+
 
 
   return (
+
     <BrowserRouter>
       <div className="App">
         <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
         <TrainingMaxDisplay
           squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
           setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
+          liftAmount={liftAmount} setLiftAmount={setLiftAmount}
         />
-        <ViewPlan plan={plan} display={display} setDisplay={setDisplay} />
-
-        <Calculator display={display} opacity={opacity} />
+        <ViewPlan
+          plan={plan} display={display} setDisplay={setDisplay} />
+        <Calculator
+          display={display} opacity={opacity} />
 
         <Routes>
+          <Route exact path="/workout-app/home"
+            element={<>
+              <Landing round={roundNum} />
+            </>}
+          >
+          </Route>
+
           <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}
             squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
             setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
-          />}> </Route>
+          />}>
+          </Route>
+
           <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay squat={squat}
             deadlift={deadlift}
             bench={bench}
             overhead={overhead}
-            round={roundNum} />}></Route>
+            round={roundNum} />}>
+          </Route>
         </Routes>
-        {/* <Landing round={roundNum} /> */}
         {/* <Info display={display} setDisplay={setDisplay} /> */}
-        {/* <DebugComponent
-          setValue={setValue}
-          value={value} /> */}
+        <DebugComponent
+          liftAmount={liftAmount}
+          setLiftAmount={setLiftAmount}
+        />
       </div>
     </BrowserRouter>
   );

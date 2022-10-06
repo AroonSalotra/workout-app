@@ -4,6 +4,8 @@ import { BsFillInfoCircleFill } from "react-icons/bs"
 
 const TrainingMaxDisplay = (props) => {
 
+    const { liftAmount, setLiftAmount } = props;
+
     const [display, setDisplay] = useState("opacity-none")
 
 
@@ -43,19 +45,19 @@ const TrainingMaxDisplay = (props) => {
                 To calculate your 1 Rep Max, perform each lift at the highest
                 weight you feel you can lift for 1 successful rep</p>
             <div className="trainingMax">
-                <TrainingMax liftType={props.squat}
+                <TrainingMax liftType={liftAmount.squat}
                     round={props.round}
                     handleChange={handleChange}
                     id="Squat" />
-                <TrainingMax liftType={props.bench}
+                <TrainingMax liftType={liftAmount.bench}
                     round={props.round}
                     handleChange={handleChange}
                     id="Bench" />
-                <TrainingMax liftType={props.deadlift}
+                <TrainingMax liftType={liftAmount.deadlift}
                     round={props.round}
                     handleChange={handleChange}
                     id="Deadlift" />
-                <TrainingMax liftType={props.overhead}
+                <TrainingMax liftType={liftAmount.overhead}
                     round={props.round}
                     handleChange={handleChange}
                     id="Overhead" />

@@ -1,4 +1,5 @@
 const TrainingMax = (props) => {
+    const {id, liftType, handleChange} = props
     return (
         <div className="inputContainer">
             <p className="inputText">{props.id}</p>
