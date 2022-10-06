@@ -25,14 +25,21 @@ function App() {
   const [deadlift, setDeadlift] = useState("60")
   const [overhead, setOverhead] = useState("32.5")
 
+  const [testState, setTestState] = useState(0)
+
   const [liftAmount, setLiftAmount] = useState({
     squat: 80,
     bench: 60,
-    deadlift: 90,
+    deadlift: 90, 
     overhead: 40
   })
 
+  // console.log(liftAmount) 
 
+  useEffect(() => {
+    console.log("from state:", liftAmount)
+  }, [liftAmount])
+ 
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
 
@@ -43,19 +50,20 @@ function App() {
   const roundNum = (input) => Math.ceil(input / 2.5) * 2.5
 
 
-
   return (
 
     <BrowserRouter>
       <div className="App">
+
         <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+
         <TrainingMaxDisplay
-          squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
-          setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
           liftAmount={liftAmount} setLiftAmount={setLiftAmount}
         />
+
         <ViewPlan
           plan={plan} display={display} setDisplay={setDisplay} />
+
         <Calculator
           display={display} opacity={opacity} />
 
@@ -67,16 +75,20 @@ function App() {
           >
           </Route>
 
-          <Route exact path="/workout-app/plan-1" element={<Main round={roundNum}
-            squat={squat} bench={bench} deadlift={deadlift} overhead={overhead}
-            setSquat={setSquat} setBench={setBench} setDeadlift={setDeadlift} setOverhead={setOverhead}
+          <Route exact path="/workout-app/plan-1" element={<Main
+            round={roundNum}
+            liftAmount={liftAmount}
+            setLiftAmount={setLiftAmount}
           />}>
           </Route>
 
-          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay squat={squat}
+          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay
+            quat={squat}
             deadlift={deadlift}
             bench={bench}
             overhead={overhead}
+            liftAmount={liftAmount}
+            setLiftAmount={setLiftAmount}
             round={roundNum} />}>
           </Route>
         </Routes>
@@ -84,6 +96,8 @@ function App() {
         <DebugComponent
           liftAmount={liftAmount}
           setLiftAmount={setLiftAmount}
+          testState={testState}
+          setTestState={setTestState}
         />
       </div>
     </BrowserRouter>

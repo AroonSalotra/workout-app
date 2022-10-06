@@ -8,34 +8,16 @@ const TrainingMaxDisplay = (props) => {
 
     const [display, setDisplay] = useState("opacity-none")
 
-
-    const handleChange = (e) => {
-
-        let liftType;
-        const id = e.target.id;
-
-        switch (id) {
-            case "Squat":
-                liftType = props.setSquat;
-                break;
-            case "Bench":
-                liftType = props.setBench;
-                break;
-            case "Deadlift":
-                liftType = props.setDeadlift;
-                break;
-            case "Overhead":
-                liftType = props.setOverhead;
-                break;
-            default:
-                liftType = "undefined"
-        }
-        return liftType(e.target.value)
-    }
-
     const handleClick = () => {
         (display === "" ? setDisplay("opacity-none") : setDisplay(""))
     }
+
+    const DATA = [
+        { title: "squat" },
+        { title: "bench" },
+        { title: "deadlift" },
+        { title: "overhead" },
+    ]
 
     return (
         <>
@@ -45,22 +27,17 @@ const TrainingMaxDisplay = (props) => {
                 To calculate your 1 Rep Max, perform each lift at the highest
                 weight you feel you can lift for 1 successful rep</p>
             <div className="trainingMax">
-                <TrainingMax liftType={liftAmount.squat}
-                    round={props.round}
-                    handleChange={handleChange}
-                    id="Squat" />
-                <TrainingMax liftType={liftAmount.bench}
-                    round={props.round}
-                    handleChange={handleChange}
-                    id="Bench" />
-                <TrainingMax liftType={liftAmount.deadlift}
-                    round={props.round}
-                    handleChange={handleChange}
-                    id="Deadlift" />
-                <TrainingMax liftType={liftAmount.overhead}
-                    round={props.round}
-                    handleChange={handleChange}
-                    id="Overhead" />
+                {DATA.map(({ title }) => {
+                    return <TrainingMax
+                        key={title}
+                        round={props.round}
+                        title={title}
+                        liftAmount={liftAmount}
+                        setLiftAmount={setLiftAmount}
+                    />
+                })}
+
+
             </div>
         </>
     );
