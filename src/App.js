@@ -30,7 +30,7 @@ function App() {
   const [liftAmount, setLiftAmount] = useState({
     squat: 80,
     bench: 60,
-    deadlift: 90, 
+    deadlift: 90,
     overhead: 40
   })
 
@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     console.log("from state:", liftAmount)
   }, [liftAmount])
- 
+
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
 
@@ -55,9 +55,51 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-        <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+        {/* <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} /> */}
 
-        <TrainingMaxDisplay
+
+
+        <Routes>
+          <Route exact path="/workout-app/home"
+            element={<>
+              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+              <Landing round={roundNum} />
+            </>}
+          >
+          </Route>
+
+          <Route exact path="/workout-app/plan-1" element={
+            <>
+              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+              <Main
+                round={roundNum}
+                liftAmount={liftAmount}
+                setLiftAmount={setLiftAmount}
+              />
+
+            </>
+
+          }>
+          </Route>
+
+          <Route exact path="/workout-app/plan-2" element={
+            <>
+              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+              <PlanTwoDisplay
+                quat={squat}
+                deadlift={deadlift}
+                bench={bench}
+                overhead={overhead}
+                liftAmount={liftAmount}
+                setLiftAmount={setLiftAmount}
+                round={roundNum} />
+
+            </>
+          }>
+          </Route>
+        </Routes>
+
+        {/* <TrainingMaxDisplay
           liftAmount={liftAmount} setLiftAmount={setLiftAmount}
         />
 
@@ -65,40 +107,14 @@ function App() {
           plan={plan} display={display} setDisplay={setDisplay} />
 
         <Calculator
-          display={display} opacity={opacity} />
-
-        <Routes>
-          <Route exact path="/workout-app/home"
-            element={<>
-              <Landing round={roundNum} />
-            </>}
-          >
-          </Route>
-
-          <Route exact path="/workout-app/plan-1" element={<Main
-            round={roundNum}
-            liftAmount={liftAmount}
-            setLiftAmount={setLiftAmount}
-          />}>
-          </Route>
-
-          <Route exact path="/workout-app/plan-2" element={<PlanTwoDisplay
-            quat={squat}
-            deadlift={deadlift}
-            bench={bench}
-            overhead={overhead}
-            liftAmount={liftAmount}
-            setLiftAmount={setLiftAmount}
-            round={roundNum} />}>
-          </Route>
-        </Routes>
+          display={display} opacity={opacity} /> */}
         {/* <Info display={display} setDisplay={setDisplay} /> */}
-        <DebugComponent
+        {/* <DebugComponent
           liftAmount={liftAmount}
           setLiftAmount={setLiftAmount}
           testState={testState}
           setTestState={setTestState}
-        />
+        /> */}
       </div>
     </BrowserRouter>
   );

@@ -34,8 +34,6 @@ html {
     height: 1rem;
 }
 
-.containerMain {}
-
 .navbar-container {
     background: var(--clr-main);
     background: #3f5479;
@@ -46,7 +44,7 @@ html {
     color: white;
 }
 
-.navbar-container > h1 {
+.navbar-container>h1 {
     font-size: 2.5rem;
 }
 
@@ -54,6 +52,65 @@ a:-webkit-any-link {
     text-decoration: none;
     color: inherit;
 }
+
+.wrapper-landing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    /* column-gap: 3rem; */
+}
+
+.wrapper-landing div {
+    /* width: 5rem;
+    height: 5rem; */
+}
+
+#barbell {
+    color: rgb(204, 143, 29);
+}
+
+#dumbell {
+    color: rgb(33, 167, 33);
+}
+
+#bodyweight {
+    color: rgb(223, 223, 77);
+}
+
+.landing-body {
+    font-size: 1.5rem;
+    position: absolute;
+    transform: translate(13rem, -20rem);
+    color: inherit;
+}
+
+.landing-title {
+    /* position: absolute;
+    transform: translate(13rem, -20rem); */
+    text-transform: capitalize;
+    border: 3px solid;
+    padding: 30px;
+    background: rgba(109, 106, 106, 0.596);
+    text-shadow: 1px 1px black;
+    /* font-size: 3rem; */
+    width: 20rem;
+}
+
+.landing-text {
+    font-weight: 700;
+}
+
+.landing-img {
+    width: 600px;
+    width: 70vw;
+    height: 600px;
+    object-fit: cover;
+}
+
+
+
 
 .navbar-links {
     display: flex;
@@ -66,6 +123,11 @@ a:-webkit-any-link {
 
 link {
     text-decoration: none;
+}
+
+.img-lifting {
+    width: 200px;
+    height: auto;
 }
 
 .link-hover {
@@ -85,27 +147,6 @@ link {
 #link-two {
     transform: translate(3.6rem, 2.5rem);
     width: 7rem;
-}
-
-.containerWeek {
-    margin-top: 5rem;
-    /* border: 3px solid black; */
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(3, 25rem);
-}
-
-.trainingDay {
-    background: var(--clr-main);
-}
-
-.subTitle {
-    background: var(--clr-a);
-    /* border-bottom: 2px solid var(--clr-c); */
-    /* padding-left: 6.5rem; */
-    text-align: center;
-    font-weight: 600;
 }
 
 .subTitle2 {
@@ -132,17 +173,6 @@ link {
 
 .indicator:hover {}
 
-.trainingDay h3 {
-    margin: auto;
-    /* padding-left: 1rem; */
-    text-align: center;
-}
-
-.containerWeek h3 {
-    background: var(--clr-a);
-    /* border-bottom-left-radius: var(--px-5); */
-}
-
 .bg-col {
     background: var(--clr-a);
     text-align: center;
@@ -156,11 +186,7 @@ link {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 2rem; */
     column-gap: 2rem;
-    /* text-align: left; */
-    /* padding-top: 3rem; */
-    /* border: 3px solid red; */
 }
 
 .trainingMax input {
@@ -172,27 +198,6 @@ link {
     justify-content: center;
     gap: 5rem;
     padding-top: 5rem;
-}
-
-.trainingWeek {
-    background: var(--clr-main);
-    box-shadow: 0 5px 10px 2px rgb(65, 63, 63);
-    width: 20rem;
-    text-align: left;
-    /* border-left: 20px solid var(--clr-b); */
-    /* border-radius: 10px; */
-    transform: translateY(-20px);
-}
-
-.trainingWeek li {
-    list-style: none;
-    font-weight: 600;
-    transform: translateX(-15px);
-    padding: .5rem;
-    background: var(--clr-highlight);
-    outline: 2px solid rgb(1, 4, 44);
-    padding-left: 2rem;
-    cursor: pointer;
 }
 
 .select-container {
@@ -215,13 +220,32 @@ link {
     background: var(--clr-bg);
 }
 
-.list {
+.containerContent {
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.subtitle {
+    text-transform: capitalize;
+    background: var(--clr-highlight);
+    /* height: fit-content; */
+}
+
+.program {
     background: var(--clr-main);
 }
 
-.containerContent {
-    display: flex;
-    flex-direction: column;
+.wrapper-plan-a {
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.wrapper-plan-a li {
+    list-style: none;
+    text-align: left;
 }
 
 .rep {
@@ -234,11 +258,6 @@ link {
     cursor: pointer;
 }
 
-.rep-static {
-    /* background: var(--clr-highlight); */
-
-}
-
 .rep:hover {
     background: var(--clr-bg);
 }
@@ -248,7 +267,6 @@ link {
     /* text-align: left; */
     float: right;
     padding-right: 2rem;
-    background: var(--clr-d);
 }
 
 .info {
@@ -257,11 +275,6 @@ link {
 }
 
 .link {
-    /* font-weight: 600;
-    color: rgb(94, 27, 94);
-    cursor: pointer;
-    user-select: none; */
-
     text-decoration: none;
     font-weight: 700;
 }
@@ -373,20 +386,14 @@ link {
     row-gap: .5rem;
 }
 
-
-.calculator input[type="radio"] {}
-
 #calories {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 30px;
-    /* gap: 50px; */
     column-gap: 50px;
     font-weight: 600;
     font-size: 1rem;
-
-    /* border: 3px solid wheat; */
 }
 
 
@@ -395,10 +402,7 @@ link {
 }
 
 .caloriesInfo {
-    /* width: 2rem; */
     text-align: center;
-    /* width: 15rem; */
-    /* white-space: pre; */
     flex: 0 1 100%;
     padding: 10px;
     transform: translateY(-50px);
@@ -422,9 +426,6 @@ link {
 
 .icon-m {
     font-size: 1.2rem;
-    /* background: var(--clr-highlight); */
-    /* color: var(--clr-main); */
-    /* z-index: 10;/ */
     cursor: pointer;
 }
 
@@ -474,15 +475,8 @@ link {
     background: var(--clr-highlight);
 }
 
-.liftType {
-    display: flex;
-    justify-content: center;
-}
-
 .placeholder {
     color: rgb(46, 43, 43);
     font-style: italic;
     font-size: .9rem;
 }
-
-/* .icon-m:active+.info-link {} */

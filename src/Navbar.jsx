@@ -8,6 +8,7 @@ const Navbar = (props) => {
     const [position, setPosition] = useState(null)
 
     const data = [
+        { text: "Home", redirect: "/workout-app/home", id: 3 },
         { text: "Barbell", redirect: "/workout-app/plan-1", id: 1 },
         { text: "Dumbell", redirect: "/workout-app/plan-2", id: 2 },
     ]
@@ -35,7 +36,7 @@ const Navbar = (props) => {
                         return <Link to={redirect} key={id} id={text}
                             onClick={(e) => handleClick(e)}>{text}</Link>
                     })}
-                    <div className={`link-hover ${display}`} id={position}></div>
+                    <div className={`link-hover ${display}`} id={position} />
                 </div>
             </nav>
             {/* <Dropdown handleClick={handleClick} plan={props.plan} setPlan={props.setPlan} /> */}

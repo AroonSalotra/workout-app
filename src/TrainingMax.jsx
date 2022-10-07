@@ -7,14 +7,12 @@ const TrainingMax = (props) => {
 
     const handleChange = (e) => {
         const stateClone = liftAmount;
-        // stateClone[title] = JSON.parse(e.target.value)
         stateClone[title] = (e.target.value)
-        // setLiftAmount(stateClone)
+        // Update State
         setLiftAmount({
             ...liftAmount,
             title: e.target.value
         })
-        // console.log(liftAmount)
         return setNumValue(e.target.value)
     }
 
