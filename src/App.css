@@ -1,3 +1,10 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 :root {
     /* --clr-bg: rgb(79, 98, 110); */
     --clr-bg: #7584a8;
@@ -8,12 +15,6 @@
 
 
     --px-5: 10px;
-}
-
-*, *::after *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 * {
@@ -65,6 +66,7 @@ a:-webkit-any-link {
 .wrapper-landing div {
     /* width: 5rem;
     height: 5rem; */
+    
 }
 
 #barbell {
@@ -108,9 +110,6 @@ a:-webkit-any-link {
     height: 600px;
     object-fit: cover;
 }
-
-
-
 
 .navbar-links {
     display: flex;
@@ -237,25 +236,41 @@ link {
 
 .wrapper-plan-a {
     display: grid;
-    grid-template-columns: repeat(3, 25%);
+    grid-template-columns: repeat(2, 30%);
     justify-content: center;
+    align-items: center;
     column-gap: 2rem;
-    row-gap: 1rem;
+    row-gap: 4rem;
+    padding-top: 3rem;
+    list-style: none;
+}
+
+.wrapper-plan-a div {
+    /* border: 3px solid green; */
+
+}
+
+.program-title {
+    color: var(--clr-highlight);
 }
 
 .wrapper-plan-a li {
     list-style: none;
     text-align: left;
+    padding: 5px 0;
+    background: var(--clr-highlight);
+    border: 1.5px solid black;
+    padding-left: 1.5rem;
 }
 
 .rep {
-    background: var(--clr-highlight);
+    /* background: var(--clr-highlight);
     padding: .3rem;
     padding-left: 2rem;
     max-width: 13rem;
     margin-left: 2.5rem;
     border: 2px solid black;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 .rep:hover {
@@ -267,6 +282,10 @@ link {
     /* text-align: left; */
     float: right;
     padding-right: 2rem;
+}
+
+.list {
+    /* padding-right: 2.5rem; */
 }
 
 .info {

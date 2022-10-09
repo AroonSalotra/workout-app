@@ -8,59 +8,88 @@ import PlanTwo from "./PlanTwo";
 
 
 const Main = (props) => {
+    const [split, setSplit] = useState(1)
     const { liftAmount, setLiftAmount, round } = props;
+
+    const PARAMS = [
+        [0.65, 0.75, 0.85],
+        [0.70, 0.80, 0.90],
+        [0.75, 0.85, 0.95],
+    ]
 
     const PROGRAM = [
         {
-            args: [0.65, 0.75, 0.85],
+            args: PARAMS[0],
             operand: "squat",
             week: 1
         },
         {
-            args: [0.65, 0.75, 0.85],
+            args: PARAMS[0],
             operand: "bench",
             week: 1
         },
         {
-            args: [0.70, 0.80, 0.90],
+            args: PARAMS[0],
+            operand: "deadlift",
+            week: 1
+        },
+        {
+            args: PARAMS[0],
+            operand: "overhead",
+            week: 1
+        },
+        {
+            args: PARAMS[1],
             operand: "squat",
             week: 2
         },
         {
-            args: [0.70, 0.80, 0.90],
+            args: PARAMS[1],
             operand: "bench",
             week: 2
         },
         {
-            args: [0.75, 0.88, 0.95],
+            args: PARAMS[2],
             operand: "squat",
             week: 3
         },
         {
-            args: [0.75, 0.85, 0.95],
+            args: PARAMS[2],
             operand: "bench",
             week: 3
         },
     ]
 
+    // console.log(PARAMS)
+
+    const PROGRAM2 = [
+        { workout: "squat" },
+        { workout: "bench" },
+        { workout: "overhead" },
+        { workout: "deadlift" },
+    ]
+
+    console.log(PROGRAM2)
+
+
+    // console.log(props)
     return (
         <>
-            {/* <div className="wrapper-plan-a"> */}
+            <h2>{split}</h2>
             <div className="wrapper-plan-a">
-                {PROGRAM.map(({ args, operand, week }) => {
-                    return <div className="program"
-                        key={`${operand} ${week}`}>
-                        <h3 className="subtitle">{operand}</h3>
+
+                {PROGRAM2.map(({ workout }) => {
+                    return <>
                         <PlanOne
-                            args={args}
-                            operand={liftAmount[operand]}
+                            workout={workout}
+                            liftAmount={liftAmount}
                             round={round}
-                            week={week}
+                            split={split}
                         />
-                    </div>
+                    </>
                 })}
+
             </div>
-            {/* </div> */}
         </>
     );
 

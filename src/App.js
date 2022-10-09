@@ -36,9 +36,9 @@ function App() {
 
   // console.log(liftAmount) 
 
-  useEffect(() => {
-    console.log("from state:", liftAmount)
-  }, [liftAmount])
+  // useEffect(() => {
+  //   console.log("from state:", liftAmount)
+  // }, [liftAmount])
 
   const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)

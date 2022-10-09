@@ -2,51 +2,53 @@ import { useState } from "react"
 
 const PlanOne = (props) => {
 
-    const calcRoutine = (operand, week, [...args]) => {
+    const { split, liftAmount, workout, round } = props;
 
-        let result = []
-        let reps = []
-        let index = 0;
+    const PARAMS = [
+        [0.65, 0.75, 0.85],
+        [0.70, 0.80, 0.90],
+        [0.75, 0.85, 0.95],
+    ]
 
-        switch (week) {
-            case 1:
-                reps.push(5, 5, 5)
-                break;
-            case 2:
-                reps.push(3, 3, 3)
-                break;
-            case 3:
-                reps.push(5, 3, 1)
-                break;
-            default:
-                reps.push("undefined")
-        }
+    let REPS = [
+        5, 5, 5
+    ]
 
-        for (let a = 0; a < args.length; a++) {
-            result.push(<li key={args[a]}>{props.round(operand * args[a])}
-                <span className="reps">1x{reps[index]}
-                </span>
-            </li>)
-            index++
-        }
+    let index = 0;
 
-        result.push(<li key={"lastRep"}
-            className="lastRep"> {props.round(operand * args[0])}
-            <span className="reps">5x5</span>
-        </li>)
-
-        result.push(<li key={"assistance"}
-            className="assistance">Assistance
-            <span className="reps">~50</span>
-        </li>)
-
-        return <ul className="list">{result}</ul>
+    // Change rep amounts based on split parameter
+    if (split === 2) {
+        REPS = [3, 3, 3]
+        index = 1;
+    }
+    else if (split === 3) {
+        REPS = [5, 3, 1]
+        index = 2;
     }
 
+    // console.log(PARAMS[0])
+
+    // let index = 0;
     return (
-        <>
-            {calcRoutine(props.operand, props.week, props.args)}
-        </>
+        <div className="program">
+
+            <h3 className="program-title">{workout}</h3>
+            <ul>
+                {PARAMS[index].map((elem, index) => {
+                    return <li>{round(liftAmount[workout] * elem)} 
+                        <span className="reps">
+                            1x{REPS[index]}
+                        </span>
+                    </li>
+                })}
+                <li>
+                    {round(liftAmount[workout] * PARAMS[index][0])} 
+                    <span className="reps">
+                        5x5
+                    </span>
+                </li>
+            </ul>
+        </div>
     );
 }
 
