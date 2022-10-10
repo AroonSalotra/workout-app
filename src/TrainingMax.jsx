@@ -16,17 +16,14 @@ const TrainingMax = (props) => {
         return setNumValue(e.target.value)
     }
 
-
-    // console.log(liftAmount[title])
-
     return (
-        <div className="inputContainer">
+        <div className="wrapper-input">
             <p className="inputText">{title}</p>
             <input
                 type="number"
                 name={title}
                 id={props.id}
-                value={numValue}
+                value={liftAmount[title]}
                 onChange={(e) => handleChange(e)} />
         </div>
     );

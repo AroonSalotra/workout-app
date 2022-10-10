@@ -3,9 +3,10 @@ import TrainingMax from "./TrainingMax";
 // import planA from "./planA";
 import { MdRoom } from "react-icons/md";
 import Indicator from "./Indicator";
-import PlanOne from "./PlanOne";
-import PlanTwo from "./PlanTwo";
+import PlanOne from "./ProgramBarbell";
+import PlanTwo from "./ProgramDumbell";
 import Background from "./Background";
+import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 
 
 const Main = (props) => {
@@ -88,16 +89,21 @@ const Main = (props) => {
     // console.log(props)
     return (
         <>
+            {/* <h1>5/3/1 Beginner</h1> */}
             <div className="btn-wrapper">
                 <button
+                    className="btn-arrow"
                     id="prev"
                     onClick={(e) => changeSplit(e)}>
-                    PREV</button>
-                <p>{split}</p>
+                    <GoChevronLeft />
+                </button>
+                <p className="subtitle">Week:{split}</p>
                 <button
+                    className="btn-arrow"
                     id="next"
                     onClick={(e) => changeSplit(e)}>
-                    NEXT</button>
+                    <GoChevronRight />
+                </button>
             </div>
 
             <section className="wrapper-barbell">

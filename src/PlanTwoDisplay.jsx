@@ -1,4 +1,4 @@
-import PlanTwo from "./PlanTwo";
+import PlanTwo from "./ProgramDumbell";
 import Background from "./Background";
 
 const PlanTwoDisplay = (props) => {
@@ -6,6 +6,7 @@ const PlanTwoDisplay = (props) => {
 
     return (
         <>
+            {/* <h1>PPL (Push Pull Legs)</h1> */}
             <PlanTwo
                 day={"A"}
                 liftAmount={liftAmount}
@@ -23,9 +24,9 @@ const PlanTwoDisplay = (props) => {
             <div className="description"
                 style={{ maxWidth: "30%" }} >
                 <p>
-                    Pick a row to start (squat + bench) or (overhead press & deadlift).
-                    A week is completed when you have cycled back to the first row
-                    (Day 1: Squat, Bench), (Day 3: Overhead, Deadlift), (Day 5: Squat, Bench repeat). Once a week is finished, increase the split which will adjust your reps and sets accordingly.
+                    2 Split program, intended to be run as a 3 day program.
+                    After each session - increase your training max values by
+                    2.5 - 5kg and 5 - 10kg for deadlift
                 </p>
             </div>
         </>

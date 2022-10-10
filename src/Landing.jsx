@@ -18,9 +18,8 @@ const Landing = (props) => {
         {
             name: "bodyweight",
             imgUrl: "https://images.unsplash.com/photo-1626444231642-6bd985bca16a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-            redirect: "/workout-app/plan-1",
+            redirect: "/workout-app/plan-3",
             text: "Convenient exercises for home or outdoor use"
-
         }
     ]
 

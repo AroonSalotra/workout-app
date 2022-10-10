@@ -21,7 +21,7 @@ const TrainingMaxDisplay = (props) => {
 
     return (
         <>
-            <h2>1 Rep Max <BsFillInfoCircleFill className="icon-m"
+            <h2>Training Max<BsFillInfoCircleFill className="icon-m"
                 onClick={() => handleClick()} /></h2>
             <p className={display}>
                 To calculate your 1 Rep Max, perform each lift at the highest

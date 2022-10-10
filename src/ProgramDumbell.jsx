@@ -29,7 +29,7 @@ const PlanTwo = (props) => {
     return (
         <>
             <section className="wrapper-dumbell">
-                <h2>
+                <h2 className="subtitle">
                     {day === "A" ? "Split A" : "Split B"}
                 </h2>
                 <div className="program">
@@ -41,7 +41,7 @@ const PlanTwo = (props) => {
                                 <span className="reps">upto 10</span>
                             </li> */}
                                 <h3 className="program-title">{workout}</h3>
-                                <li className="set">{operand ? round(operand * modifier) : "No Weights"}
+                                <li className="set">{operand ? round(operand * modifier) + " kg" : "No Weights"}
                                     <span className="reps">~ 10</span>
                                 </li>
                             </>
@@ -52,7 +52,7 @@ const PlanTwo = (props) => {
 
 
             </section>
-            
+
         </>
     );
 }

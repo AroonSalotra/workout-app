@@ -119,9 +119,6 @@ const Calculator = (props) => {
                     <button onClick={() => handleClick()} type="button" >Calculate </button>
                 </div>
             </form>
-            {/* <h3>Age: {age}</h3>
-            <h3>Weight: {weight}</h3>
-            <h3>Sex: {sex}</h3> */}
             <div id="calories" style={{ display: display }}>
                 <div id="bulk">
                     <p>Bulk</p>

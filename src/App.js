@@ -1,6 +1,6 @@
 
 // import './index.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 import './Mobile.css'
 // import './trainingMax.css'
@@ -8,15 +8,17 @@ import Landing from "./Landing";
 // import TrainingMax from './TrainingMax';
 import Main from './Main';
 import DebugComponent from './DebugComponent';
-import PlanOne from './PlanOne';
+import PlanOne from './ProgramBarbell';
 import Info from './Info';
 import Calculator from './Calculator';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import PlanTwo from './PlanTwo';
+import PlanTwo from './ProgramDumbell';
 import PlanTwoDisplay from './PlanTwoDisplay';
 import Navbar from './Navbar';
 import TrainingMaxDisplay from './TrainingMaxDisplay';
 import ViewPlan from './ViewPlan';
+import ProgramBodyweight from './ProgramBodyweight';
+import DisplayBodyweight from './DisplayBodyweight';
 
 function App() {
 
@@ -58,11 +60,13 @@ function App() {
         {/* <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} /> */}
 
 
-
+        <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
+        <TrainingMaxDisplay
+          liftAmount={liftAmount} setLiftAmount={setLiftAmount}
+        />
         <Routes>
           <Route exact path="/workout-app/home"
             element={<>
-              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
               <Landing round={roundNum} />
             </>}
           >
@@ -70,13 +74,11 @@ function App() {
 
           <Route exact path="/workout-app/plan-1" element={
             <>
-              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
               <Main
                 round={roundNum}
                 liftAmount={liftAmount}
                 setLiftAmount={setLiftAmount}
               />
-
             </>
 
           }>
@@ -84,7 +86,6 @@ function App() {
 
           <Route exact path="/workout-app/plan-2" element={
             <>
-              <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
               <PlanTwoDisplay
                 quat={squat}
                 deadlift={deadlift}
@@ -97,6 +98,15 @@ function App() {
             </>
           }>
           </Route>
+
+          <Route exact path="/workout-app/plan-3" element={
+            <>
+              <DisplayBodyweight />
+            </>
+          } >
+
+          </Route>
+
         </Routes>
 
         {/* <TrainingMaxDisplay

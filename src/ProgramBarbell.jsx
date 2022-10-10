@@ -31,16 +31,13 @@ const PlanOne = (props) => {
     // let index = 0;
     return (
         <>
-
             <div className="program">
-                <h3 className="program-title">
-                    <span className="unit">(kg)</span>
-                    {workout}</h3>
+                <h3 className="program-title">{workout}</h3>
                 <ul className="list">
                     {PARAMS[index].map((elem, index) => {
                         return <li key={index}
                             className="set" >
-                            {round(liftAmount[workout] * elem)}
+                            {round(liftAmount[workout] * elem)} kg
                             <span className="reps">
                                 1x{REPS[index]}
                             </span>
@@ -48,7 +45,7 @@ const PlanOne = (props) => {
                     })}
                     <li
                         className="set">
-                        {round(liftAmount[workout] * PARAMS[index][0])}
+                        {round(liftAmount[workout] * PARAMS[index][0])} kg
                         <span className="reps">
                             5x5
                         </span>

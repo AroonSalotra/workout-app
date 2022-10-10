@@ -8,9 +8,10 @@ const Navbar = (props) => {
     const [position, setPosition] = useState(null)
 
     const data = [
-        { text: "Home", redirect: "/workout-app/home", id: 3 },
-        { text: "Barbell", redirect: "/workout-app/plan-1", id: 1 },
-        { text: "Dumbell", redirect: "/workout-app/plan-2", id: 2 },
+        { text: "Home", redirect: "/workout-app/home" },
+        { text: "Barbell", redirect: "/workout-app/plan-1" },
+        { text: "Dumbell", redirect: "/workout-app/plan-2" },
+        { text: "Bodyweight", redirect: "/workout-app/plan-3" },
     ]
 
     const handleClick = (e) => {
@@ -33,7 +34,7 @@ const Navbar = (props) => {
                 {/* <p >Choose a plan below</p> */}
                 <div className="navbar-links">
                     {data.map(({ text, redirect, id }) => {
-                        return <Link to={redirect} key={id} id={text}
+                        return <Link to={redirect} key={text} id={text}
                             onClick={(e) => handleClick(e)}>{text}</Link>
                     })}
                     <div className={`link-hover ${display}`} id={position} />
