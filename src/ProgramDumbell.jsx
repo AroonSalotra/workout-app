@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-const PlanTwo = (props) => {
+const ProgramDumbell = (props) => {
 
     const { day, liftAmount, round } = props;
 
@@ -36,15 +36,12 @@ const PlanTwo = (props) => {
 
                     <ul>
                         {index.map(({ workout, operand, modifier }) => {
-                            return <>
-                                {/* <li className="set">{workout}
-                                <span className="reps">upto 10</span>
-                            </li> */}
+                            return <div key={workout}>
                                 <h3 className="program-title">{workout}</h3>
                                 <li className="set">{operand ? round(operand * modifier) + " kg" : "No Weights"}
                                     <span className="reps">~ 10</span>
                                 </li>
-                            </>
+                            </div>
                         })}
                     </ul>
                 </div>
@@ -57,4 +54,4 @@ const PlanTwo = (props) => {
     );
 }
 
-export default PlanTwo;
+export default ProgramDumbell;

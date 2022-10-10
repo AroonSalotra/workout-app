@@ -13,8 +13,8 @@ const ProgramBodyweight = (props) => {
             <h2 className="subtitle">{title}</h2>
             <div className="program bodyweight-container">
                 <ul>
-                    {data.map(({ workout }) => {
-                        return <div>
+                    {data.map(({ workout, index }) => {
+                        return <div key={workout + index}>
                             <h3 className="program-title">{`${workout} progression`}</h3>
                             <li className="set">3 x {reps}</li>
                         </div>

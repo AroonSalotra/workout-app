@@ -6,18 +6,14 @@ import './Mobile.css'
 // import './trainingMax.css'
 import Landing from "./Landing";
 // import TrainingMax from './TrainingMax';
-import Main from './Main';
-import DebugComponent from './DebugComponent';
-import PlanOne from './ProgramBarbell';
+import DisplayBarbell from './DisplayBarbell';
 import Info from './Info';
 import Calculator from './Calculator';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import PlanTwo from './ProgramDumbell';
-import PlanTwoDisplay from './PlanTwoDisplay';
+import DisplayDumbell from './DisplayDumbell';
 import Navbar from './Navbar';
 import TrainingMaxDisplay from './TrainingMaxDisplay';
 import ViewPlan from './ViewPlan';
-import ProgramBodyweight from './ProgramBodyweight';
 import DisplayBodyweight from './DisplayBodyweight';
 
 function App() {
@@ -42,7 +38,7 @@ function App() {
   //   console.log("from state:", liftAmount)
   // }, [liftAmount])
 
-  const [display, setDisplay] = useState("block")
+  const [display, setDisplay] = useState("none")
   const [opacity, setOpacity] = useState(1)
 
   const [value, setValue] = useState(null)
@@ -80,7 +76,7 @@ function App() {
             <>
               <TrainingMaxDisplay
                 liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
-              <Main
+              <DisplayBarbell
                 round={roundNum}
                 liftAmount={liftAmount}
                 setLiftAmount={setLiftAmount}
@@ -94,7 +90,7 @@ function App() {
             <>
               <TrainingMaxDisplay
                 liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
-              <PlanTwoDisplay
+              <DisplayDumbell
                 quat={squat}
                 deadlift={deadlift}
                 bench={bench}

@@ -10,7 +10,6 @@ const Calculator = (props) => {
 
     const [display, setDisplay] = useState("none")
 
-
     const handleChange = (event) => {
 
         let targetState;

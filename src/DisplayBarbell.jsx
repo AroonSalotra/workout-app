@@ -9,61 +9,12 @@ import Background from "./Background";
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 
 
-const Main = (props) => {
+const DisplayBarbell = (props) => {
     const [split, setSplit] = useState(1)
     const { liftAmount, setLiftAmount, round } = props;
-
-    const PARAMS = [
-        [0.65, 0.75, 0.85],
-        [0.70, 0.80, 0.90],
-        [0.75, 0.85, 0.95],
-    ]
-
-    const PROGRAM = [
-        {
-            args: PARAMS[0],
-            operand: "squat",
-            week: 1
-        },
-        {
-            args: PARAMS[0],
-            operand: "bench",
-            week: 1
-        },
-        {
-            args: PARAMS[0],
-            operand: "deadlift",
-            week: 1
-        },
-        {
-            args: PARAMS[0],
-            operand: "overhead",
-            week: 1
-        },
-        {
-            args: PARAMS[1],
-            operand: "squat",
-            week: 2
-        },
-        {
-            args: PARAMS[1],
-            operand: "bench",
-            week: 2
-        },
-        {
-            args: PARAMS[2],
-            operand: "squat",
-            week: 3
-        },
-        {
-            args: PARAMS[2],
-            operand: "bench",
-            week: 3
-        },
-    ]
-
     const changeSplit = (e) => {
         const checkTarget = e.target.id === "next"
+        // console.log(e.target.id)
 
         if (checkTarget) {
             split > 2 ? setSplit(1) : setSplit(split + 1)
@@ -74,7 +25,7 @@ const Main = (props) => {
 
     // console.log(PARAMS)
 
-    const PROGRAM2 = [
+    const PROGRAM = [
         { workout: "squat" },
         { workout: "bench" },
         { workout: "overhead" },
@@ -93,22 +44,20 @@ const Main = (props) => {
             <div className="btn-wrapper">
                 <button
                     className="btn-arrow"
-                    id="prev"
                     onClick={(e) => changeSplit(e)}>
-                    <GoChevronLeft />
+                    <GoChevronLeft id="prev" />
                 </button>
                 <p className="subtitle">Week:{split}</p>
                 <button
                     className="btn-arrow"
-                    id="next"
                     onClick={(e) => changeSplit(e)}>
-                    <GoChevronRight />
+                    <GoChevronRight id="next" />
                 </button>
             </div>
 
             <section className="wrapper-barbell">
 
-                {PROGRAM2.map(({ workout }, index) => {
+                {PROGRAM.map(({ workout }, index) => {
                     return <PlanOne
                         key={index}
                         workout={workout}
@@ -134,4 +83,4 @@ const Main = (props) => {
 
 }
 
-export default Main;
+export default DisplayBarbell;

@@ -1,18 +1,18 @@
-import PlanTwo from "./ProgramDumbell";
+import ProgramDumbell from "./ProgramDumbell";
 import Background from "./Background";
 
-const PlanTwoDisplay = (props) => {
+const DisplayDumbell = (props) => {
     const { liftAmount, round } = props
 
     return (
         <>
             {/* <h1>PPL (Push Pull Legs)</h1> */}
-            <PlanTwo
+            <ProgramDumbell
                 day={"A"}
                 liftAmount={liftAmount}
                 round={round}
             />
-            <PlanTwo
+            <ProgramDumbell
                 day={"B"}
                 liftAmount={liftAmount}
                 round={round}
@@ -33,4 +33,4 @@ const PlanTwoDisplay = (props) => {
     );
 }
 
-export default PlanTwoDisplay;
+export default DisplayDumbell;
