@@ -90,8 +90,11 @@ const Calculator = (props) => {
     }
 
     return (
-        <div className="calculator" style={{ display: props.display }}>
+        <div className="calculator"
+            style={{ display: props.display }}>
+
             <h3 className="subTitle">Calorie Calculator</h3>
+
             <form action="" className="rep-static">
                 <input type="radio" name="sex" id="male" onChange={handleChange} />
                 <label htmlFor="male">Male</label>
@@ -104,7 +107,9 @@ const Calculator = (props) => {
                     <label htmlFor="female">Weight <span className="placeholder">in kg</span></label>
                     <input type="number" name="" id="weight" onChange={handleChange} />
                 </div>
+
                 <label htmlFor="height">Height <span className="placeholder">in ft</span></label>
+
                 <div>
                     <select name="" id="height" defaultValue={"default"} onChange={changeHeight}>
                         <option value="default" disabled></option>
@@ -115,25 +120,32 @@ const Calculator = (props) => {
                         <option value={192}>6 - 6.5ft</option>
                     </select>
                 </div>
+
                 <div>
                     <button onClick={() => handleClick()} type="button" >Calculate </button>
                 </div>
+
             </form>
+
             <div id="calories" style={{ display: display }}>
                 <div id="bulk">
                     <p>Bulk</p>
                     <p> {changeNumber("add", 500, result)} </p>
                 </div>
+
                 <div id="maintain">
                     <p>Maintain</p>
                     <p>{result}</p>
                 </div>
+
                 <div id="cut">
                     <p>Cut</p>
                     <p> {changeNumber("subtract", 400, result)} </p>
                 </div>
+
                 <p className="caloriesInfo">Bulk to gain mass, Maintain to enter body recompisition, Cut to lose weight</p>
             </div>
+
         </div>
     );
 }

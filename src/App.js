@@ -42,7 +42,7 @@ function App() {
   //   console.log("from state:", liftAmount)
   // }, [liftAmount])
 
-  const [display, setDisplay] = useState("none")
+  const [display, setDisplay] = useState("block")
   const [opacity, setOpacity] = useState(1)
 
   const [value, setValue] = useState(null)
@@ -59,10 +59,14 @@ function App() {
 
         {/* <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} /> */}
 
+        <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan}
+          display={display} setDisplay={setDisplay}
+        />
 
-        <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
         {/* <TrainingMaxDisplay
           liftAmount={liftAmount} setLiftAmount={setLiftAmount} /> */}
+        <Calculator
+          display={display} opacity={opacity} />
 
         <Routes>
           <Route exact path="/workout-app/home"
@@ -74,6 +78,8 @@ function App() {
 
           <Route exact path="/workout-app/plan-1" element={
             <>
+              <TrainingMaxDisplay
+                liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
               <Main
                 round={roundNum}
                 liftAmount={liftAmount}
@@ -86,6 +92,8 @@ function App() {
 
           <Route exact path="/workout-app/plan-2" element={
             <>
+              <TrainingMaxDisplay
+                liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
               <PlanTwoDisplay
                 quat={squat}
                 deadlift={deadlift}
@@ -101,6 +109,8 @@ function App() {
 
           <Route exact path="/workout-app/plan-3" element={
             <>
+              <TrainingMaxDisplay
+                liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
               <DisplayBodyweight />
             </>
           } >
@@ -109,7 +119,8 @@ function App() {
 
         </Routes>
 
-        {/* <TrainingMaxDisplay
+        {
+          /* <TrainingMaxDisplay
           liftAmount={liftAmount} setLiftAmount={setLiftAmount}
         />
 
@@ -117,7 +128,8 @@ function App() {
           plan={plan} display={display} setDisplay={setDisplay} />
 
         <Calculator
-          display={display} opacity={opacity} /> */}
+          display={display} opacity={opacity} /> */
+        }
         {/* <Info display={display} setDisplay={setDisplay} /> */}
         {/* <DebugComponent
           liftAmount={liftAmount}
