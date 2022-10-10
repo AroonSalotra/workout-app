@@ -7,23 +7,14 @@ import './Mobile.css'
 import Landing from "./Landing";
 // import TrainingMax from './TrainingMax';
 import DisplayBarbell from './DisplayBarbell';
-import Info from './Info';
 import Calculator from './Calculator';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DisplayDumbell from './DisplayDumbell';
 import Navbar from './Navbar';
 import TrainingMaxDisplay from './TrainingMaxDisplay';
-import ViewPlan from './ViewPlan';
 import DisplayBodyweight from './DisplayBodyweight';
 
 function App() {
-
-  const [squat, setSquat] = useState("82.2")
-  const [bench, setBench] = useState("60")
-  const [deadlift, setDeadlift] = useState("60")
-  const [overhead, setOverhead] = useState("32.5")
-
-  const [testState, setTestState] = useState(0)
 
   const [liftAmount, setLiftAmount] = useState({
     squat: 80,
@@ -39,7 +30,6 @@ function App() {
   // }, [liftAmount])
 
   const [display, setDisplay] = useState("none")
-  const [opacity, setOpacity] = useState(1)
 
   const [value, setValue] = useState(null)
 
@@ -53,16 +43,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
 
-        {/* <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} /> */}
 
         <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan}
           display={display} setDisplay={setDisplay}
         />
-
-        {/* <TrainingMaxDisplay
-          liftAmount={liftAmount} setLiftAmount={setLiftAmount} /> */}
         <Calculator
-          display={display} opacity={opacity} />
+          display={display} />
 
         <Routes>
           <Route exact path="/workout-app/home"
@@ -91,10 +77,6 @@ function App() {
               <TrainingMaxDisplay
                 liftAmount={liftAmount} setLiftAmount={setLiftAmount} />
               <DisplayDumbell
-                quat={squat}
-                deadlift={deadlift}
-                bench={bench}
-                overhead={overhead}
                 liftAmount={liftAmount}
                 setLiftAmount={setLiftAmount}
                 round={roundNum} />
@@ -115,24 +97,8 @@ function App() {
 
         </Routes>
 
-        {
-          /* <TrainingMaxDisplay
-          liftAmount={liftAmount} setLiftAmount={setLiftAmount}
-        />
-
-        <ViewPlan
-          plan={plan} display={display} setDisplay={setDisplay} />
-
-        <Calculator
-          display={display} opacity={opacity} /> */
-        }
-        {/* <Info display={display} setDisplay={setDisplay} /> */}
-        {/* <DebugComponent
-          liftAmount={liftAmount}
-          setLiftAmount={setLiftAmount}
-          testState={testState}
-          setTestState={setTestState}
-        /> */}
+        {/* <Calculator
+          display={display} opacity={opacity} /> */}
       </div>
     </BrowserRouter>
   );

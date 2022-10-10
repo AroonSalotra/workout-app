@@ -1,17 +1,13 @@
-import { useState, useRef } from "react";
-import TrainingMax from "./TrainingMax";
+import { useState } from "react";
 // import planA from "./planA";
-import { MdRoom } from "react-icons/md";
-import Indicator from "./Indicator";
 import PlanOne from "./ProgramBarbell";
-import PlanTwo from "./ProgramDumbell";
 import Background from "./Background";
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 
 
 const DisplayBarbell = (props) => {
     const [split, setSplit] = useState(1)
-    const { liftAmount, setLiftAmount, round } = props;
+    const { liftAmount, round } = props;
     const changeSplit = (e) => {
         const checkTarget = e.target.id === "next"
         // console.log(e.target.id)
