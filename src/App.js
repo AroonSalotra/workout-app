@@ -51,7 +51,7 @@ function App() {
           display={display} />
 
         <Routes>
-          <Route exact path="/workout-app/home"
+          <Route exact path="/workout-app/"
             element={<>
               <Landing round={roundNum} />
             </>}
