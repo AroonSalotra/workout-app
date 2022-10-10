@@ -61,9 +61,9 @@ function App() {
 
 
         <Navbar setValue={setValue} value={value} plan={plan} setPlan={setPlan} />
-        <TrainingMaxDisplay
-          liftAmount={liftAmount} setLiftAmount={setLiftAmount}
-        />
+        {/* <TrainingMaxDisplay
+          liftAmount={liftAmount} setLiftAmount={setLiftAmount} /> */}
+
         <Routes>
           <Route exact path="/workout-app/home"
             element={<>

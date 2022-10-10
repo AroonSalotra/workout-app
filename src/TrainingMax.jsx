@@ -17,14 +17,16 @@ const TrainingMax = (props) => {
     }
 
     return (
-        <div className="wrapper-input">
-            <p className="inputText">{title}</p>
+        <div>
+            <p className="training-max">{title}</p>
             <input
                 type="number"
                 name={title}
                 id={props.id}
                 value={liftAmount[title]}
-                onChange={(e) => handleChange(e)} />
+                onChange={(e) => handleChange(e)}
+                className="training-max-input" />
+
         </div>
     );
 }
