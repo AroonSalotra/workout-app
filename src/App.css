@@ -15,10 +15,6 @@
     --px-5: 10px;
 }
 
-* {
-    /* background: rgba(180, 80, 80, 0.192); */
-    /* outline: 3px solid red; */
-}
 
 body {
     background: var(--clr-bg);
@@ -56,14 +52,6 @@ body {
     padding-bottom: .5rem;
 }
 
-.navbar-links {
-    /* display: flex;
-    justify-content: center;
-    gap: 2rem;
-    font-size: 1.75rem;
-    font-weight: 400;
-    padding-bottom: .5rem; */
-}
 
 .navbar-mobile {
     font-size: 2rem;
@@ -101,8 +89,10 @@ a:-webkit-any-link {
     position: absolute;
     transform: translate(13rem, -25rem);
     color: inherit;
-    max-width: 25rem;
+    max-width: 22rem;
     text-align: left;
+    background: var(--clr-text-bg-02);
+    border-radius: 10px;
 }
 
 .landing-btn {
@@ -134,7 +124,7 @@ a:-webkit-any-link {
 .landing-text {
     padding: 0 5px;
     font-weight: 700;
-    background: var(--clr-text-bg);
+    /* background: var(--clr-text-bg); */
 }
 
 .landing-img {
@@ -145,8 +135,6 @@ a:-webkit-any-link {
     transition: height 300ms ease;
 }
 
-
-
 link {
     text-decoration: none;
 }
@@ -154,8 +142,9 @@ link {
 .icon-row {
     display: flex;
     gap: 1.5rem;
-    font-size: 2rem;
-    background: var(--clr-text-bg);
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    /* background: var(--clr-text-bg); */
 }
 
 .icon-row p {
@@ -307,7 +296,7 @@ link {
 }
 
 .description {
-    text-align: left;
+    /* text-align: left; */
     color: var(--clr-highlight);
     font-weight: 700;
     margin: auto;
@@ -317,7 +306,6 @@ link {
 }
 
 
-.wrapper-barbell li {}
 
 .list li {
     display: flex;
@@ -349,7 +337,6 @@ link {
     width: 25rem;
 }
 
-.wrapper-dumbell li {}
 
 .wrapper-bg {
     position: absolute;
@@ -407,9 +394,6 @@ link {
     padding-right: 2rem;
 }
 
-.list {
-    /* padding-right: 2.5rem; */
-}
 
 .info {
     display: flex;
@@ -446,12 +430,6 @@ link {
     font-size: 1.3rem;
 }
 
-.input-text {
-    /* background: var(--clr-a); */
-    /* font-weight: 600; */
-    /* padding: 5px; */
-    /* text-align: center; */
-}
 
 .wrapper-input {
     background: var(--clr-text-bg-02);
@@ -559,6 +537,7 @@ link {
 
 .icon-m {
     font-size: 1.2rem;
+    margin-left: 1rem;
     cursor: pointer;
 }
 
@@ -622,7 +601,6 @@ link {
     display: block;
 }
 
-.mobile-navbar {}
 
 @media (max-width: 1000px) {
     .wrapper-barbell {
@@ -640,10 +618,6 @@ link {
 }
 
 @media (max-width: 620px) {
-    .navbar-container {
-        /* width: fit-content; */
-        /* display: none; */
-    }
 
     .navbar-content {
         display: none;
